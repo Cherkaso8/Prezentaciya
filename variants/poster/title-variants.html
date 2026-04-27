@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Интерференция · варианты заголовка</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Bebas+Neue&family=Big+Shoulders+Display:wght@800;900&family=Anton&family=Rozha+One&family=Staatliches&family=Six+Caps&family=Archivo+Black&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1c1a18;
+    --paper: #f3e9cb;
+    --ink: #1c1a18;
+    --accent: #c7361f;
+    --ochre: #ead6a3;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--paper); font-family: 'DM Sans', sans-serif; }
+  .page {
+    max-width: 1700px; margin: 0 auto; padding: 80px 60px 120px;
+  }
+  header {
+    border-bottom: 2px solid var(--paper);
+    padding-bottom: 24px; margin-bottom: 60px;
+    display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap;
+  }
+  header h1 {
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 22px; letter-spacing: 0.35em; text-transform: uppercase;
+    margin: 0; color: var(--paper);
+  }
+  header .sub {
+    font-size: 14px; color: rgba(243,233,203,0.65);
+    letter-spacing: 0.05em;
+  }
+  .note {
+    font-size: 14px; line-height: 1.6; max-width: 760px;
+    color: rgba(243,233,203,0.7); margin-bottom: 60px;
+  }
+  .note b { color: var(--accent); }
+
+  .variant {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(243,233,203,0.2);
+    align-items: center;
+  }
+  .variant:first-of-type { border-top: none; }
+  .label {
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .label .num {
+    display: block;
+    font-family: 'Rozha One', serif;
+    font-size: 72px; line-height: 1;
+    color: var(--paper); margin-bottom: 8px; font-weight: normal; letter-spacing: 0;
+  }
+  .label .name {
+    display: block; margin-bottom: 6px;
+  }
+  .label .meta {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400; font-size: 12px;
+    letter-spacing: 0.08em; text-transform: none;
+    color: rgba(243,233,203,0.55);
+  }
+
+  .title-box {
+    background: var(--ochre);
+    padding: 60px 60px;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex; align-items: center; justify-content: flex-start;
+  }
+  .title-box.dark {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .title-box.poster {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .title-text {
+    font-size: clamp(60px, 10vw, 180px);
+    line-height: 0.88;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .title-box.dark .title-text,
+  .title-box.poster .title-text {
+    color: var(--paper);
+  }
+
+  /* Шрифты */
+  .f-oswald    { font-family: 'Oswald', sans-serif; font-weight: 700; }
+  .f-bebas     { font-family: 'Bebas Neue', sans-serif; font-weight: 400; letter-spacing: 0; }
+  .f-bigshoul  { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; }
+  .f-anton     { font-family: 'Anton', sans-serif; font-weight: 400; letter-spacing: 0; }
+  .f-rozha     { font-family: 'Rozha One', serif; font-weight: 400; letter-spacing: 0; text-transform: none; }
+  .f-staatliches { font-family: 'Staatliches', sans-serif; font-weight: 400; letter-spacing: 0.01em; }
+  .f-sixcaps   { font-family: 'Six Caps', sans-serif; font-weight: 400; letter-spacing: 0; }
+  .f-archivo   { font-family: 'Archivo Black', sans-serif; font-weight: 900; letter-spacing: -0.02em; }
+
+  /* Плакатные эффекты */
+  .poster .title-text {
+    text-shadow: 0 6px 0 rgba(199, 54, 31, 0.45);
+  }
+  .accent-slash {
+    color: var(--accent) !important;
+  }
+
+  .footer-note {
+    margin-top: 80px; padding-top: 40px;
+    border-top: 1px solid rgba(243,233,203,0.2);
+    font-size: 14px; color: rgba(243,233,203,0.55);
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Варианты заголовка · Интерференция</h1>
+    <span class="sub">Шрифты в духе «Острых козырьков»</span>
+  </header>
+
+  <p class="note">
+    8 вариантов заголовка. <b>Охряный фон = как на постере.</b> Чёрный фон = тот же титульник, как в колоде.
+    Напиши — какой номер/номера нравятся, поставлю в титульный слайд.
+  </p>
+
+  <!-- 1. Oswald (текущий) -->
+  <div class="variant">
+    <div class="label">
+      <span class="num">01</span>
+      <span class="name">Oswald</span>
+      <span class="meta">Текущий. Condensed, современный.</span>
+    </div>
+    <div class="title-box poster">
+      <h2 class="title-text f-oswald">Интерференция</h2>
+    </div>
+  </div>
+
+  <!-- 2. Bebas Neue -->
+  <div class="variant">
+    <div class="label">
+      <span class="num">02</span>
+      <span class="name">Bebas Neue</span>
+      <span class="meta">Классика постеров. Узкий, ровный, чистый.</span>
+    </div>
+    <div class="title-box poster">
+      <h2 class="title-text f-bebas">Интерференция</h2>
+    </div>
+  </div>
+
+  <!-- 3. Big Shoulders Display -->
+  <div class="variant">
+    <div class="label">
+      <span class="num">03</span>
+      <span class="name">Big Shoulders</span>
+      <span class="meta">Брутальный, геометричный. Самый «кино».</span>
+    </div>
+    <div class="title-box poster">
+      <h2 class="title-text f-bigshoul">Интерференция</h2>
+    </div>
+  </div>
+
+  <!-- 4. Anton -->
+  <div class="variant">
+    <div class="label">
+      <span class="num">04</span>
+      <span class="name">Anton</span>
+      <span class="meta">Жирный, газетный. Максимальная плотность.</span>
+    </div>
+    <div class="title-box poster">
+      <h2 class="title-text f-anton">Интерференция</h2>
+    </div>
+  </div>
+
+  <!-- 5. Rozha One -->
+  <div class="variant">
+    <div class="label">
+      <span class="num">05</span>
+      <span class="name">Rozha One</span>
+      <span class="meta">С засечками. Викторианский плакат, литературно.</span>
+    </div>
+    <div class="title-box poster">
+      <h2 class="title-text f-rozha">Интерференция</h2>
+    </div>
+  </div>
+
+  <!-- 6. Staatliches -->
+  <div class="variant">
+    <div class="label">
+      <span class="num">06</span>
+      <span class="name">Staatliches</span>
+      <span class="meta">Кинематографичный, немного ретро-армейский.</span>
+    </div>
+    <div class="title-box poster">
+      <h2 class="title-text f-staatliches">Интерференция</h2>
+    </div>
+  </div>
+
+  <!-- 7. Six Caps -->
+  <div class="variant">
+    <div class="label">
+      <span class="num">07</span>
+      <span class="name">Six Caps</span>
+      <span class="meta">Экстремально узкий, вытянутый. Готический оттенок.</span>
+    </div>
+    <div class="title-box poster">
+      <h2 class="title-text f-sixcaps">Интерференция</h2>
+    </div>
+  </div>
+
+  <!-- 8. Archivo Black -->
+  <div class="variant">
+    <div class="label">
+      <span class="num">08</span>
+      <span class="name">Archivo Black</span>
+      <span class="meta">Широкий, жирный, современный. Не condensed.</span>
+    </div>
+    <div class="title-box poster">
+      <h2 class="title-text f-archivo">Интерференция</h2>
+    </div>
+  </div>
+
+  <p class="footer-note">
+    Все варианты — одной строкой, без переноса. Размер адаптивный (10&nbsp;vw),
+    для питча можно подогнать под точную ширину слайда.
+    <br /><br />
+    Важно: «острые козырьки» (сам сериал) использует заголовок своего типа —
+    <b>лого-леттеринг</b>, нарисованный вручную. Ни один шрифт его не воспроизведёт.
+    Ближе всего по настроению: <b>03 Big Shoulders</b> (геометрия), <b>02 Bebas Neue</b> (чистота),
+    <b>05 Rozha One</b> (засечки и викторианский акцент).
+  </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Интерференция · Минимализм</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #f4f1ec; color: #14110d; }
+  body { font-family: 'Inter', sans-serif; }
+  deck-stage > section { background: #f4f1ec; }
+</style>
+<script src="deck-stage.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+  <section id="m01"></section><section id="m02"></section><section id="m03"></section>
+  <section id="m04"></section><section id="m05"></section><section id="m06"></section>
+  <section id="m07"></section><section id="m08"></section><section id="m09"></section>
+  <section id="m10"></section><section id="m11"></section><section id="m12"></section>
+  <section id="m13"></section><section id="m14"></section><section id="m15"></section>
+  <section id="m16"></section><section id="m17"></section><section id="m18"></section>
+</deck-stage>
+
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="slides.jsx"></script>
+<script type="text/babel">
+  const mounts = [
+    ['m01', M01_Title], ['m02', M02_Epigraph], ['m03', M03_Format],
+    ['m04', M04_Logline], ['m05', M05_CoreIdea], ['m06', M06_CharsSection],
+    ['m07', M07_Olivia], ['m08', M08_Masha], ['m09', M09_Oleg],
+    ['m10', M10_Trio], ['m11', M11_ArtemDelets], ['m12', M12_SynopsisSection],
+    ['m13', M13_Synopsis], ['m14', M14_Arc], ['m15', M15_Tone],
+    ['m16', M16_Audience], ['m17', M17_Team], ['m18', M18_Closing],
+  ];
+  for (const [id, Comp] of mounts) {
+    const el = document.getElementById(id);
+    if (el) ReactDOM.createRoot(el).render(<Comp />);
+  }
+</script>
+</body>
+</html>

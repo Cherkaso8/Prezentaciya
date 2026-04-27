@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Интерференция · Киноплакатный</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;800;900&family=Anton&family=Rozha+One&family=Abril+Fatface&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #ead6a3; color: #1c1a18; }
+  body { font-family: 'DM Sans', sans-serif; }
+  deck-stage > section { background: #ead6a3; }
+</style>
+<script src="deck-stage.js"></script>
+<script src="lib/react.js"></script>
+<script src="lib/react-dom.js"></script>
+<script src="lib/babel.js"></script>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+  <section id="p01"></section><section id="p02"></section><section id="p03"></section>
+  <section id="p04"></section><section id="p05"></section><section id="p06"></section>
+  <section id="p07"></section><section id="p08"></section><section id="p09"></section>
+  <section id="p10"></section><section id="p11"></section><section id="p12"></section>
+  <section id="p13"></section><section id="p14"></section><section id="p15"></section><section id="p16"></section>
+  <section id="p17"></section><section id="p18"></section><section id="p19"></section><section id="p20"></section>
+  
+</deck-stage>
+
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="slides.jsx"></script>
+<script type="text/babel">
+  const mounts = [
+    ['p01', P01_Title], ['p02', P02_Epigraph], ['p03', P03_Format],
+    ['p04', P04_Logline], ['p05', P05_CoreIdea], ['p06', P16_CourierWorld],
+    ['p07', P06_CharsSection], ['p08', P07_Olivia], ['p09', P08_Masha],
+    ['p10', P09_Oleg], ['p11', P10_Trio], ['p12', P11_ArtemDelets],
+    ['p13', P12_SynopsisSection], ['p14', P13_Synopsis], ['p15', P_Pilot], ['p16', P14_Arc], ['p17', P_EpisodeEngine],
+    ['p18', P15_Tone], ['p19', P17_Audience], ['p20', P19_Closing],
+  ];
+  for (const [id, Comp] of mounts) {
+    const el = document.getElementById(id);
+    if (el) ReactDOM.createRoot(el).render(<Comp />);
+  }
+</script>
+</body>
+</html>

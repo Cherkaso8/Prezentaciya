@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Интерференция · Выбор варианта</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0e0c0a; color: #f0ebe0;
+    min-height: 100vh;
+  }
+  .page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 48px 80px;
+  }
+  .head {
+    border-bottom: 1px solid rgba(240,235,224,0.18);
+    padding-bottom: 28px; margin-bottom: 56px;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-style: italic; font-weight: 300;
+    font-size: 40px; letter-spacing: -0.02em;
+    color: #f0ebe0;
+  }
+  .chip {
+    font-family: 'Oswald', sans-serif; font-weight: 500;
+    font-size: 12px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: rgba(240,235,224,0.55);
+  }
+  .intro {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    margin-bottom: 80px; align-items: start;
+  }
+  .intro h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300; font-style: italic;
+    font-size: 84px; line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: #f0ebe0;
+  }
+  .intro h1 em {
+    color: #c8381e; font-style: italic;
+  }
+  .intro p {
+    font-size: 18px; line-height: 1.65;
+    color: rgba(240,235,224,0.75);
+    margin: 0 0 14px;
+    max-width: 540px;
+  }
+  .grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  }
+  .card {
+    display: flex; flex-direction: column;
+    background: #151310;
+    border: 1px solid rgba(240,235,224,0.15);
+    overflow: hidden;
+    text-decoration: none; color: inherit;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(240,235,224,0.4);
+    background: #1a1714;
+  }
+  .card .thumb {
+    aspect-ratio: 16/10;
+    background: #0a0807;
+    position: relative; overflow: hidden;
+    border-bottom: 1px solid rgba(240,235,224,0.12);
+  }
+  .card .body {
+    padding: 28px 28px 32px;
+    display: flex; flex-direction: column; gap: 14px;
+    flex: 1;
+  }
+  .card .num {
+    font-family: 'Oswald', sans-serif; font-weight: 500;
+    font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: #c8381e;
+  }
+  .card .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 300; font-style: italic;
+    font-size: 40px; line-height: 1;
+    letter-spacing: -0.02em;
+    color: #f0ebe0;
+    margin: 0;
+  }
+  .card .desc {
+    font-size: 14px; line-height: 1.55;
+    color: rgba(240,235,224,0.65);
+    margin: 0;
+  }
+  .card .links {
+    display: flex; gap: 10px; margin-top: auto; padding-top: 18px;
+  }
+  .card .btn {
+    flex: 1;
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 8px;
+    padding: 11px 16px;
+    font-family: 'Oswald', sans-serif; font-weight: 500;
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+    border: 1px solid rgba(240,235,224,0.35);
+    background: transparent; color: #f0ebe0;
+    text-decoration: none;
+    transition: background 140ms, color 140ms, border-color 140ms;
+  }
+  .card .btn:hover {
+    background: #f0ebe0; color: #0e0c0a; border-color: #f0ebe0;
+  }
+  .card .btn.primary {
+    background: #c8381e; color: #fff; border-color: #c8381e;
+  }
+  .card .btn.primary:hover {
+    background: #e6462a; border-color: #e6462a;
+  }
+
+  /* Thumbnails — lightweight CSS/SVG previews */
+  .th-noir {
+    background:
+      radial-gradient(ellipse at 30% 30%, rgba(184,74,43,0.25) 0%, transparent 60%),
+      linear-gradient(180deg, #18130f 0%, #0a0806 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-style: italic;
+    color: #e8d8b8; font-size: 46px; letter-spacing: 0.04em;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.8);
+  }
+  .th-noir::before, .th-noir::after {
+    content: ''; position: absolute;
+    top: 10px; bottom: 10px; width: 22px;
+    background: repeating-linear-gradient(0deg,
+      #000 0px, #000 20px, transparent 20px, transparent 32px);
+  }
+  .th-noir::before { left: 12px; }
+  .th-noir::after { right: 12px; }
+
+  .th-minimal {
+    background: #f4f1ec;
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .th-minimal .left {
+    background: #14110d;
+    display: flex; align-items: center; justify-content: center;
+    color: #f4f1ec;
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-size: 52px; line-height: 0.9;
+    letter-spacing: -0.03em;
+    padding: 24px;
+  }
+  .th-minimal .right {
+    padding: 24px;
+    color: #14110d;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .th-minimal .kicker {
+    font-family: 'Oswald', sans-serif; font-weight: 500;
+    font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: #c8381e;
+  }
+  .th-minimal .bar { width: 40px; height: 3px; background: #c8381e; }
+
+  .th-poster {
+    background: #ead6a3; position: relative;
+    display: flex; align-items: flex-end;
+    padding: 20px;
+  }
+  .th-poster::before {
+    content: ''; position: absolute;
+    top: 20px; left: 20px;
+    padding: 6px 12px;
+    font-family: 'Oswald', sans-serif; font-weight: 700;
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: #f3e9cb; background: #c7361f;
+    content: 'Оригинальный сериал';
+  }
+  .th-poster .big {
+    font-family: 'Oswald', sans-serif; font-weight: 700;
+    font-size: 60px; line-height: 0.82; text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: #1c1a18;
+  }
+
+  .footer {
+    margin-top: 80px; padding-top: 28px;
+    border-top: 1px solid rgba(240,235,224,0.15);
+    display: flex; justify-content: space-between;
+    font-size: 12px; color: rgba(240,235,224,0.45);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    font-family: 'Oswald', sans-serif; font-weight: 400;
+  }
+  .hint {
+    margin-top: 32px;
+    padding: 20px 24px;
+    border: 1px solid rgba(240,235,224,0.15);
+    font-size: 14px; line-height: 1.6;
+    color: rgba(240,235,224,0.7);
+    max-width: 720px;
+  }
+  .hint b { color: #f0ebe0; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head">
+    <div class="logo">Интерференция</div>
+    <div class="chip">Питч-презентация · 3 варианта дизайна</div>
+  </div>
+
+  <div class="intro">
+    <div>
+      <h1>Три визуальных <em>направления</em> на выбор.</h1>
+    </div>
+    <div>
+      <p>
+        Питч одного и того же сериала в трёх разных упаковках. Содержание и структура идентичны —
+        различаются визуальный язык, типографика и ощущение «на столе у платформы».
+      </p>
+      <p>
+        Откройте любой вариант в браузере для просмотра. Для PDF — используйте системный диалог печати
+        (Cmd/Ctrl+P), формат страницы уже настроен на 1920×1080, одна серия = одна страница.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="variants/noir/deck.html">
+      <div class="thumb th-noir">Интерференция</div>
+      <div class="body">
+        <div class="num">Вариант 01</div>
+        <h2 class="name">Плёнка-нуар</h2>
+        <p class="desc">
+          Ближе всего к первоначальной версии. Тёмный фон, перфорация киноплёнки,
+          машинописный шрифт, ржаво-красный акцент. Атмосфера старого детектива.
+        </p>
+        <div class="links">
+          <span class="btn primary">Открыть →</span>
+          <span class="btn" onclick="event.preventDefault(); event.stopPropagation(); window.open('variants/noir/deck.html', '_blank');">PDF</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="variants/minimal/deck.html">
+      <div class="thumb th-minimal">
+        <div class="left"><span><em style="font-style:italic">Интер-<br/>ференция</em></span></div>
+        <div class="right">
+          <div class="kicker">Эпиграф · 02</div>
+          <div style="font-family:'Fraunces',serif; font-style:italic; font-weight:300; font-size:22px; line-height:1.15; letter-spacing:-0.01em;">
+            наложение волн, усиление или ослабление их&nbsp;амплитуд.
+          </div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="num">Вариант 02</div>
+        <h2 class="name">Минимализм</h2>
+        <p class="desc">
+          Редакционная вёрстка в духе артбука: пергаментный фон, крупный курсивный сериф,
+          точная сетка, много воздуха. Красная линия — единственный акцент.
+        </p>
+        <div class="links">
+          <span class="btn primary">Открыть →</span>
+          <span class="btn" onclick="event.preventDefault(); event.stopPropagation(); window.open('variants/minimal/deck.html', '_blank');">PDF</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" href="variants/poster/deck.html">
+      <div class="thumb th-poster">
+        <div class="big">Интер-<br/>ференция</div>
+      </div>
+      <div class="body">
+        <div class="num">Вариант 03</div>
+        <h2 class="name">Киноплакатный</h2>
+        <p class="desc">
+          Язык киноафиши: охра, красный, угольный. Огромные штампованные заголовки,
+          толстые рамки, плотные цветные блоки. Максимальный «продажный» удар.
+        </p>
+        <div class="links">
+          <span class="btn primary">Открыть →</span>
+          <span class="btn" onclick="event.preventDefault(); event.stopPropagation(); window.open('variants/poster/deck.html', '_blank');">PDF</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="hint">
+    <b>Навигация внутри деки:</b> стрелки ← → или пробел для перехода между слайдами. Клавиша <b>R</b> —
+    сброс на титульный слайд. <b>Cmd/Ctrl+P</b> — печать в PDF (страница уже настроена на 1920×1080).
+  </div>
+
+  <div class="footer">
+    <div>Интерференция · Питч-колода</div>
+    <div>18 слайдов × 3 варианта</div>
+  </div>
+</div>
+</body>
+</html>

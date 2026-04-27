@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Интерференция · Парная версия</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;800;900&family=Anton&family=Rozha+One&family=Abril+Fatface&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #ead6a3; color: #1c1a18; }
+  body { font-family: 'DM Sans', sans-serif; }
+  deck-stage > section { background: #ead6a3; }
+</style>
+<script src="deck-stage.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel">
+  window.PPTOTAL = 18;
+</script>
+</head>
+<body>
+<deck-stage width="1920" height="1080">
+  <section id="p01"></section><section id="p02"></section><section id="p03"></section>
+  <section id="p04"></section><section id="p05"></section><section id="p06"></section>
+  <section id="p07"></section><section id="p08"></section><section id="p09"></section>
+  <section id="p10"></section><section id="p11"></section><section id="p12"></section>
+  <section id="p13"></section><section id="p14"></section><section id="p15"></section>
+  <section id="p16"></section><section id="p17"></section><section id="p18"></section>
+</deck-stage>
+
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="slides.jsx"></script>
+<script type="text/babel" src="slides-pairs.jsx"></script>
+<script type="text/babel">
+  const mounts = [
+    ['p01', PP01_Title],
+    ['p02', PP02_Epigraph],
+    ['p03', PP03_Format],
+    ['p04', PP04_Logline],
+    ['p05', PP05_CoreIdea],
+    ['p06', PP06_CharsSect],
+    ['p07', PP07_OliviaMasha],
+    ['p08', PP08_OlegTimur],
+    ['p09', PP09_SukhoyGuddini],
+    ['p10', PP10_Delets],
+    ['p11', PP11_SynopsisSect],
+    ['p12', PP12_Synopsis],
+    ['p13', PP13_Arc],
+    ['p14', PP14_Tone],
+    ['p15', PP15_Courier],
+    ['p16', PP16_Audience],
+    ['p17', PP17_Team],
+    ['p18', PP18_Closing],
+  ];
+  for (const [id, Comp] of mounts) {
+    const el = document.getElementById(id);
+    if (el) ReactDOM.createRoot(el).render(<Comp />);
+  }
+</script>
+</body>
+</html>
