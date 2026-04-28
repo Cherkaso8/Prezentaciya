@@ -453,7 +453,7 @@ function P11_ArtemDelets() {
   const pair = [
     {
       name: 'Тимур', age: '25–30', role: 'Сын Олега · айти',
-      img: '../../assets/refs/timur-01.webp', stripColor: POS.accent,
+      img: '../../assets/refs/timur-02.webp', stripColor: POS.accent, imgStyle: { objectPosition: 'center 25%' },
       body: 'Ведёт легальный, спокойный образ жизни — не связан с деятельностью отца. Давление неудачных отношений пускает его «во все тяжкие» и в финале приводит к главной трагедии.',
       wants: 'Одобрение отца.',
     },
@@ -473,7 +473,7 @@ function P11_ArtemDelets() {
         {pair.map((p) => (
           <div key={p.name} style={{ border: `4px solid ${POS.ink}`, display: 'flex', flexDirection: 'column' }}>
             <div style={{ height: 300, position: 'relative', borderBottom: `4px solid ${POS.ink}`, background: POS.bgAlt }}>
-              {p.img ? <PosImage src={p.img} filter="crush" /> : <PosPlaceholder label={p.name} style={{ border: 'none' }} />}
+              {p.img ? <PosImage src={p.img} filter="crush" style={p.imgStyle || {}} /> : <PosPlaceholder label={p.name} style={{ border: 'none' }} />}
               <div style={{
                 position: 'absolute', top: 18, left: 18,
                 padding: '10px 16px 8px', background: p.stripColor, color: POS.cream,
