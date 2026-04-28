@@ -1,6 +1,6 @@
 // V3 — Киноплакатный. 18 слайдов.
 
-const PTOTAL = 20;
+const PTOTAL = 21;
 
 // ── 01. Title — full-bleed постер, крупный логотип штампом ──────
 function P01_Title() {
@@ -119,8 +119,8 @@ function P03_Format() {
     ['Настроение', 'Экшен · комедия · неонуар'],
     ['Формат', 'Горизонтальный сериал'],
     ['Объём', '8 серий · 45–50 минут'],
-    ['Сезоны', '1 сезон · заявлен 2-й'],
-    ['Место', 'Москва · Крым · 2025'],
+    ['Сезоны', '1 сезон · возможность продолжения'],
+    ['Место', 'Москва · 2026'],
   ];
   return (
     <PosFrame>
@@ -152,7 +152,7 @@ function P03_Format() {
           </div>
         </div>
         <div style={{ position: 'relative', border: `4px solid ${POS.ink}` }}>
-          <PosImage src="../../assets/ref-scene-solitude.png" filter="hot" />
+          <PosImage src="../../assets/refs/drive-ref.png" filter="none" />
           <div style={{
             position: 'absolute', left: 20, bottom: 20,
             padding: '10px 18px 8px', background: POS.accent, color: POS.cream,
@@ -271,14 +271,14 @@ function P06_CharsSection() {
 }
 
 // ── Char full-page template ───────────────────────────────────
-function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.accent }) {
+function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.accent, imgPos = 'center top' }) {
   return (
     <PosFrame>
       <PosMeta index={idx} total={PTOTAL} section="Персонажи" />
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '580px 1fr', gap: 70, alignItems: 'start', marginTop: 40 }}>
         <div>
-          <div style={{ height: 720, position: 'relative', border: `4px solid ${POS.ink}` }}>
-            {img ? <PosImage src={img} filter="crush" /> : <PosPlaceholder label={name} />}
+          <div style={{ height: 720, position: 'relative', border: `4px solid ${POS.ink}`, overflow: 'hidden' }}>
+            {img ? <img src={img} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: imgPos, transform: 'scale(1.15)', transformOrigin: 'center top' }} /> : <PosPlaceholder label={name} />}
             <div style={{
               position: 'absolute', bottom: 20, left: 20,
               padding: '10px 18px 8px', background: stripColor, color: POS.cream,
@@ -323,12 +323,12 @@ function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.ac
 }
 
 function P07_Olivia() { return <PCharFull idx={8} name="Оливия" age="38 лет" role="Криминальный курьер"
-  img="../../assets/refs/olivia-01.jpeg"
+  img="../../assets/refs/olivia-02.png"
   body={<>Доставляет товар, послания, договора. Решает вопросы силой в случае необходимости. Одинокая, замкнутая, скрытная.<br/><br/>Страдает от выгорания и износа суставов — что сильно мешает в работе. Речь короткая, общается неохотно. Одевается практично: худи, капюшоны, куртки, джинсы, ботинки.</>}
   wants="Уйти на покой и уехать к морю. Но в Маше начинает видеть себя в начале пути." />; }
 
-function P08_Masha() { return <PCharFull idx={9} name="Маша" age="8 лет" role="Сирота · попрошайка"
-  img="../../assets/refs/masha-01.png" stripColor={POS.ink}
+function P08_Masha() { return <PCharFull idx={9} name="Маша" age="8 лет" role="Сирота · попрошайка" imgPos="center 55%"
+  img="../../assets/refs/masha-05.png" stripColor={POS.ink}
   body={<>Слишком маленькая, чтобы постоять за себя — вынуждена терпеть агрессию старших. Стремится казаться взрослее, сильнее.<br/><br/>Хочет быть кому-то нужной. Собирается уехать, но никак не решается. Очарована Оливией — единственной, кто была к ней добра.</>}
   wants="Найти маму — ту, которой у неё никогда не было." />; }
 
@@ -339,52 +339,44 @@ function P09_Oleg() { return <PCharFull idx={10} name="Олег" age="60 лет"
 
 // ── 10. Дуэт Сухой + Гуддини ─────────────────────────────────
 function P10_Trio() {
-  const duo = [
-    { name: 'Сухой', role: 'Уволенный айтишник · мечтатель', img: null, color: POS.ink,
-      text: 'Устал убирать в чужих квартирах. Хочет запустить свой стартап, но нет стартового капитала. Энергичный, уверенный в себе, инициирует затею.' },
-    { name: 'Гуддини', role: 'Уволенный айтишник · напарник', img: null, color: POS.ink,
-      text: 'Напарник Сухого. Тихий, зажатый — но разбирается во всём лучше. Из-за неуверенности отказывается от своих убеждений.' },
-  ];
   return (
     <PosFrame>
       <PosMeta index={11} total={PTOTAL} section="Персонажи" />
-      <PosHead kicker="Двое друзей · наивные стартаперы" size={104}>Сухой &amp; Гуддини</PosHead>
+      <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, marginTop: 20 }}>
 
-      <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, marginTop: 36 }}>
-        {duo.map((p) => (
-          <div key={p.name} style={{ border: `4px solid ${POS.ink}`, display: 'flex', flexDirection: 'column' }}>
-            <div style={{ height: 440, position: 'relative', borderBottom: `4px solid ${POS.ink}`, background: POS.bgAlt }}>
-              {p.img ? <PosImage src={p.img} filter="crush" /> : <PosPlaceholder label={p.name} style={{ border: 'none' }} />}
-              <div style={{
-                position: 'absolute', top: 18, left: 18,
-                padding: '10px 16px 8px', background: p.color, color: POS.cream,
-                fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 13,
-                letterSpacing: '0.4em', textTransform: 'uppercase',
-              }}>25–30</div>
+        {/* Левая колонка — одна картинка на двоих */}
+        <div style={{ position: 'relative', border: `4px solid ${POS.ink}` }}>
+          <PosImage src="../../assets/refs/sukhoy-guddini.jpg" filter="none" />
+          <div style={{
+            position: 'absolute', top: 18, left: 18,
+            padding: '10px 16px 8px', background: POS.ink, color: POS.cream,
+            fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 13,
+            letterSpacing: '0.4em', textTransform: 'uppercase',
+          }}>25–30</div>
+        </div>
+
+        {/* Правая колонка — оба персонажа */}
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 0 }}>
+          <PosHead kicker="Двое друзей · наивные стартаперы" size={80}>Сухой &amp; Гуддини</PosHead>
+
+          {[
+            { name: 'Сухой', role: 'Уволенный айтишник · мечтатель',
+              text: 'Устал убирать в чужих квартирах. Хочет запустить стартап, но нет капитала. Энергичный, уверенный в себе — инициирует затею.' },
+            { name: 'Гуддини', role: 'Уволенный айтишник · напарник',
+              text: 'Напарник Сухого. Тихий, зажатый — но разбирается во всём лучше. Из-за неуверенности отказывается от своих убеждений.' },
+          ].map((p) => (
+            <div key={p.name} style={{ borderTop: `2px solid ${POS.ink}`, paddingTop: 18, marginTop: 18 }}>
+              <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 500, fontSize: 12, letterSpacing: '0.4em', textTransform: 'uppercase', color: POS.accent, marginBottom: 4 }}>{p.role}</div>
+              <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 52, lineHeight: 0.9, textTransform: 'uppercase', color: POS.ink, marginBottom: 10 }}>{p.name}</div>
+              <PosBody size={18}>{p.text}</PosBody>
             </div>
-            <div style={{ padding: 36, flex: 1, background: POS.cream, display: 'flex', flexDirection: 'column' }}>
-              <div style={{
-                fontFamily: POS_FONTS.slab, fontWeight: 500, fontSize: 14,
-                letterSpacing: '0.45em', textTransform: 'uppercase',
-                color: p.color, marginBottom: 10,
-              }}>{p.role}</div>
-              <div style={{
-                fontFamily: POS_FONTS.slab, fontWeight: 700,
-                fontSize: 108, lineHeight: 0.9, textTransform: 'uppercase',
-                color: POS.ink, marginBottom: 18,
-              }}>{p.name}</div>
-              <div style={{ width: 60, height: 4, background: POS.accent, marginBottom: 20 }} />
-              <PosBody size={22}>{p.text}</PosBody>
-            </div>
+          ))}
+
+          <div style={{ marginTop: 24, padding: '16px 20px', background: POS.ink, color: POS.cream, fontFamily: POS_FONTS.display, fontStyle: 'italic', fontSize: 19, lineHeight: 1.4 }}>
+            Воруют у Оливии — и сами того не зная, приводят к гибели Тимура.
           </div>
-        ))}
-      </div>
+        </div>
 
-      <div style={{
-        marginTop: 24, padding: '18px 24px', background: POS.ink, color: POS.cream,
-        fontFamily: POS_FONTS.display, fontStyle: 'italic', fontSize: 22, lineHeight: 1.4,
-      }}>
-        Воруют у Оливии. Пытаясь отмыть деньги, влезают в сомнительное дело — и, сами того не зная, приводят к гибели Тимура.
       </div>
     </PosFrame>
   );
@@ -787,7 +779,7 @@ function P16_CourierWorld() {
         position: 'absolute', top: 0, left: 0, bottom: 0, width: '52%',
         overflow: 'hidden',
       }}>
-        <img src="../../assets/refs/courier-bag-01.png" alt=""
+        <img src="../../assets/refs/courier-bag-02.png" alt=""
           style={{
             position: 'absolute', inset: 0, width: '100%', height: '100%',
             objectFit: 'cover',
@@ -965,16 +957,14 @@ function P17_Audience() {
 // ── 17. Team ──────────────────────────────────────────────────
 function P18_Team() {
   const team = [
-    ['Автор · шоураннер', '[Имя автора]'],
-    ['Режиссёр', '[Имя режиссёра]'],
-    ['Оператор-постановщик', '[Имя]'],
-    ['Художник-постановщик', '[Имя]'],
-    ['Композитор', '[Имя]'],
-    ['Продюсер', '[Имя продюсера]'],
+    ['Автор · шоураннер', 'Сергей Черкасов'],
+    ['Режиссёр', 'Сергей Черкасов'],
+    ['Оператор-постановщик', 'Дмитрий Бобко'],
+    ['Продюсер', 'Алексей Голубев'],
   ];
   return (
     <PosFrame>
-      <PosMeta index={18} total={PTOTAL} section="Команда" />
+      <PosMeta index={20} total={PTOTAL} section="Команда" />
       <PosHead kicker="Кто делает" size={100}>Команда</PosHead>
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 80, alignItems: 'start', marginTop: 40 }}>
         <div>
@@ -1106,5 +1096,5 @@ Object.assign(window, {
   P01_Title, P02_Epigraph, P03_Format, P04_Logline, P05_CoreIdea,
   P06_CharsSection, P07_Olivia, P08_Masha, P09_Oleg, P10_Trio, P11_ArtemDelets,
   P12_SynopsisSection, P13_Synopsis, P_Pilot, P14_Arc, P_EpisodeEngine, P15_Tone, P16_CourierWorld,
-  P17_Audience, P19_Closing,
+  P17_Audience, P18_Team, P19_Closing,
 });
