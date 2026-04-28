@@ -137,7 +137,7 @@ function P03_Format() {
                 alignItems: 'baseline',
               }}>
                 <div style={{
-                  fontFamily: POS_FONTS.slab, fontWeight: 500,
+                  fontFamily: POS_FONTS.slab, fontWeight: 700,
                   fontSize: 15, letterSpacing: '0.35em', textTransform: 'uppercase',
                   color: POS.accent,
                 }}>{k}</div>
@@ -305,7 +305,7 @@ function P06_CharsSection() {
     <div style={{
       position: 'absolute', inset: 0, background: POS.ink, overflow: 'hidden',
     }}>
-      <PosMeta index={7} total={PTOTAL} section="Раздел 1" dark />
+      <PosMeta index={8} total={PTOTAL} section="Раздел 1" dark />
       <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={{ position: 'relative' }}>
           <PosImage src="../../assets/ref-gentlemen.webp" filter="none" />
@@ -369,7 +369,7 @@ function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.ac
               <div style={{
                 fontFamily: POS_FONTS.slab, fontWeight: 600, fontSize: 13,
                 letterSpacing: '0.5em', textTransform: 'uppercase',
-                color: stripColor, marginBottom: 12,
+                color: POS.accent, marginBottom: 12,
               }}>Хочет</div>
               <div style={{
                 fontFamily: POS_FONTS.display, fontStyle: 'italic', fontWeight: 400,
@@ -383,17 +383,17 @@ function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.ac
   );
 }
 
-function P07_Olivia() { return <PCharFull idx={8} name="Оливия" age="38 лет" role="Криминальный курьер"
+function P07_Olivia() { return <PCharFull idx={9} name="Оливия" age="38 лет" role="Криминальный курьер"
   img="../../assets/refs/olivia-02.png"
   body={<>Доставляет товар, послания, договора. Решает вопросы силой в случае необходимости. Одинокая, замкнутая, скрытная.<br/><br/>Страдает от выгорания и износа суставов — что сильно мешает в работе. Речь короткая, общается неохотно. Одевается практично: худи, капюшоны, куртки, джинсы, ботинки.</>}
   wants="Уйти на покой и уехать к морю. Но в Маше начинает видеть себя в начале пути." />; }
 
-function P08_Masha() { return <PCharFull idx={9} name="Маша" age="8 лет" role="Сирота · попрошайка" imgPos="center 55%"
+function P08_Masha() { return <PCharFull idx={10} name="Маша" age="8 лет" role="Сирота · попрошайка" imgPos="center 55%"
   img="../../assets/refs/masha-05.png" stripColor={POS.ink}
   body={<>Слишком маленькая, чтобы постоять за себя — вынуждена терпеть агрессию старших. Стремится казаться взрослее, сильнее.<br/><br/>Хочет быть кому-то нужной. Собирается уехать, но никак не решается. Очарована Оливией — единственной, кто была к ней добра.</>}
   wants="Найти маму — ту, которой у неё никогда не было." />; }
 
-function P09_Oleg() { return <PCharFull idx={10} name="Олег" age="60 лет" role="Глава организации · работодатель Оливии"
+function P09_Oleg() { return <PCharFull idx={11} name="Олег" age="60 лет" role="Глава организации · работодатель Оливии"
   img="../../assets/refs/oleg-01.jpg"
   body={<>Заурядный внешний вид скрывает жестокого, расчётливого главу организации по отмыву, обналичиванию и транспортировке нелегальных денег.<br/><br/>Не принимает сына — что на самом деле есть попытка защитить, вытеснив из своего мира. Своими руками, отстраняя сына, толкал его к гибели. <b>В финале собственноручно расстреливает его</b>, не узнав сына под маской.</>}
   wants="Нормального наследника." />; }
@@ -402,7 +402,7 @@ function P09_Oleg() { return <PCharFull idx={10} name="Олег" age="60 лет"
 function P10_Trio() {
   return (
     <PosFrame>
-      <PosMeta index={11} total={PTOTAL} section="Персонажи" />
+      <PosMeta index={12} total={PTOTAL} section="Персонажи" />
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, marginTop: 20 }}>
 
         {/* Левая колонка — одна картинка на двоих */}
@@ -466,7 +466,7 @@ function P11_ArtemDelets() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={12} total={PTOTAL} section="Персонажи" />
+      <PosMeta index={13} total={PTOTAL} section="Персонажи" />
       <PosHead kicker="Катализатор и его проводник" size={104}>Тимур &amp; Делец</PosHead>
 
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, marginTop: 36 }}>
@@ -500,7 +500,7 @@ function P11_ArtemDelets() {
                 <div style={{
                   fontFamily: POS_FONTS.slab, fontWeight: 600, fontSize: 11,
                   letterSpacing: '0.5em', textTransform: 'uppercase',
-                  color: p.stripColor, marginBottom: 6,
+                  color: POS.accent, marginBottom: 6,
                 }}>Хочет</div>
                 <div style={{
                   fontFamily: POS_FONTS.display, fontStyle: 'italic',
@@ -521,7 +521,7 @@ function P12_SynopsisSection() {
     <div style={{
       position: 'absolute', inset: 0, background: POS.accent, color: POS.cream, overflow: 'hidden',
     }}>
-      <PosMeta index={13} total={PTOTAL} section="Раздел 2" dark />
+      <PosMeta index={14} total={PTOTAL} section="Раздел 2" dark />
       <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={{
           padding: '110px 90px 90px', display: 'flex', flexDirection: 'column', justifyContent: 'center',
@@ -551,7 +551,7 @@ function P12_SynopsisSection() {
 function P13_Synopsis() {
   return (
     <PosFrame>
-      <PosMeta index={14} total={PTOTAL} section="Синопсис" />
+      <PosMeta index={15} total={PTOTAL} section="Синопсис" />
       <PosHead kicker="Краткое содержание" size={100}>Синопсис</PosHead>
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1.25fr 1fr', gap: 60, alignItems: 'start', marginTop: 40 }}>
         <div>
@@ -655,7 +655,7 @@ function P14_Arc() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={15} total={PTOTAL} section="Арка" />
+      <PosMeta index={16} total={PTOTAL} section="Арка" />
       <PosHead kicker="Четыре акта · восемь серий" size={100}>Драматургия</PosHead>
 
       {/* 4 акта */}
@@ -788,7 +788,7 @@ function P15_Tone() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={16} total={PTOTAL} section="Визуал" />
+      <PosMeta index={18} total={PTOTAL} section="Визуал" />
       <PosHead kicker="Как это выглядит и звучит" size={100}>Тон и визуал</PosHead>
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'start', marginTop: 40 }}>
         <div>
@@ -868,7 +868,7 @@ function P16_CourierWorld() {
         backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.8  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23p)'/></svg>")`,
       }} />
 
-      <PosMeta index={6} total={PTOTAL} section="Мир" dark />
+      <PosMeta index={7} total={PTOTAL} section="Мир" dark />
 
       {/* плашка-подпись на картинке, нижний левый угол */}
       <div style={{
@@ -950,7 +950,7 @@ function P16_CourierWorld() {
 function P17_Audience() {
   return (
     <PosFrame>
-      <PosMeta index={17} total={PTOTAL} section="Аудитория" />
+      <PosMeta index={19} total={PTOTAL} section="Аудитория" />
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 80, alignItems: 'start', marginTop: 30 }}>
         <div>
           <PosHead kicker="Целевая аудитория" size={100}>Для кого</PosHead>
@@ -1039,11 +1039,11 @@ function P_WhyNow() {
     <PosFrame bg={POS.ink} ink={POS.cream}>
       <PosMeta index={20} total={PTOTAL} section="Почему сейчас" dark />
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: 1400, margin: '0 auto', width: '100%' }}>
-        <PosHead kicker="Три причины" size={90} color={POS.cream} accentColor={POS.yellow}>Почему сейчас</PosHead>
+        <PosHead kicker="Три причины" size={110} color={POS.cream} accentColor={POS.yellow}>Почему сейчас</PosHead>
         <div style={{ marginTop: 40, display: 'flex', flexDirection: 'column', gap: 0 }}>
           {blocks.map(({ label, text }, i) => (
             <div key={i} style={{ borderTop: '2px solid rgba(243,233,203,0.15)', paddingTop: 30, paddingBottom: 30 }}>
-              <PosBody size={22} color={POS.cream} style={{ lineHeight: 1.65 }}>
+              <PosBody size={28} color={POS.cream} style={{ lineHeight: 1.65 }}>
                 <span style={{ fontFamily: POS_FONTS.display, fontStyle: 'italic', fontWeight: 400, color: POS.yellow }}>{label}</span>
                 {' '}{text}
               </PosBody>
@@ -1066,7 +1066,7 @@ function P_WhyWatch() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={21} total={PTOTAL} section="Почему смотреть" />
+      <PosMeta index={6} total={PTOTAL} section="Почему смотреть" />
       <PosHead kicker="Для зрителя" size={90}>Почему смотреть</PosHead>
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginTop: 28 }}>
         {reasons.map(({ n, head, body }) => (
@@ -1104,7 +1104,7 @@ function P18_Team() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={20} total={PTOTAL} section="Команда" />
+      <PosMeta index={21} total={PTOTAL} section="Команда" />
       <PosHead kicker="Кто делает" size={100}>Команда</PosHead>
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 80, alignItems: 'start', marginTop: 40 }}>
         <div>
