@@ -1,6 +1,6 @@
 // V3 — Киноплакатный. 18 слайдов.
 
-const PTOTAL = 23;
+const PTOTAL = 22;
 
 // ── 01. Title — full-bleed постер, крупный логотип штампом ──────
 function P01_Title() {
@@ -181,7 +181,7 @@ function P04_Logline() {
           color: POS.cream,
           textWrap: 'pretty',
         }}>
-          Желающая уйти на покой <span style={{ color: POS.ink }}>криминальная курьерша</span> становится жертвой покушения и случайно спасает назойливую <span style={{ color: POS.ink }}>восьмилетнюю сироту</span>, ставшую свидетелем этого.
+          Желающая уйти на покой <span style={{ color: POS.ink }}>криминальный курьер</span> становится жертвой покушения и случайно спасает <span style={{ color: POS.ink }}>восьмилетнюю сироту</span>, ставшую свидетелем этого.
         </div>
         <div style={{
           marginTop: 40, paddingTop: 28, borderTop: `3px solid rgba(243,233,203,0.35)`,
@@ -232,6 +232,67 @@ function P05_CoreIdea() {
           <div style={{ height: 340, marginTop: 20, border: `4px solid ${POS.ink}` }}>
             <PosImage src="../../assets/refs/sketchbook-02.png" filter="none" />
           </div>
+        </div>
+      </div>
+    </PosFrame>
+  );
+}
+
+// ── 05b. Три крючка ──────────────────────────────────────────
+function P_WhySee() {
+  const hooks = [
+    { n: '01', title: 'Новый мир',
+      text: 'Криминальная доставка — узнаваемая бытовая система, внутри которой спрятан теневой рынок.' },
+    { n: '02', title: 'Женщина и ребёнок',
+      text: 'Курьер-одиночка и сирота — эмоциональная связка с сильным зрительским потенциалом.' },
+    { n: '03', title: 'Отцы и дети',
+      text: 'Оливия становится матерью чужому ребёнку. Олег уничтожает собственного сына.' },
+  ];
+  return (
+    <PosFrame>
+      <PosMeta index={6} total={PTOTAL} section="Продажа" />
+      <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'start', marginTop: 30 }}>
+        <div>
+          <PosHead kicker="Почему это надо смотреть" size={100}>Три<br/>крючка</PosHead>
+          <div style={{
+            marginTop: 40, padding: '28px 32px',
+            background: POS.ink, color: POS.cream,
+          }}>
+            <div style={{
+              fontFamily: POS_FONTS.slab, fontWeight: 500,
+              fontSize: 13, letterSpacing: '0.4em', textTransform: 'uppercase',
+              color: POS.accent, marginBottom: 14,
+            }}>Формула сериала</div>
+            <div style={{
+              fontFamily: POS_FONTS.display, fontStyle: 'italic', fontWeight: 400,
+              fontSize: 30, lineHeight: 1.3, color: POS.cream,
+            }}>
+              «Это "Леон" в мире криминальной доставки, рассказанный с энергией Гая Ричи и болью семейной драмы.»
+            </div>
+          </div>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 28, paddingTop: 20 }}>
+          {hooks.map((h) => (
+            <div key={h.n} style={{
+              display: 'grid', gridTemplateColumns: '72px 1fr',
+              gap: 24, alignItems: 'start',
+              padding: '28px 32px', border: `3px solid ${POS.ink}`,
+            }}>
+              <div style={{
+                fontFamily: POS_FONTS.slab, fontWeight: 700,
+                fontSize: 64, lineHeight: 1, color: POS.accent,
+              }}>{h.n}</div>
+              <div>
+                <div style={{
+                  fontFamily: POS_FONTS.slab, fontWeight: 700,
+                  fontSize: 26, textTransform: 'uppercase',
+                  letterSpacing: '0.02em', color: POS.ink,
+                  marginBottom: 10,
+                }}>{h.title}</div>
+                <PosBody size={19}>{h.text}</PosBody>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </PosFrame>
@@ -375,6 +436,11 @@ function P10_Trio() {
           <div style={{ marginTop: 24, padding: '16px 20px', background: POS.ink, color: POS.cream, fontFamily: POS_FONTS.display, fontStyle: 'italic', fontSize: 19, lineHeight: 1.4 }}>
             Воруют у Оливии — и сами того не зная, приводят к гибели Тимура.
           </div>
+
+          <div style={{ marginTop: 10, padding: '14px 20px', border: `2px solid ${POS.ink}`, background: POS.cream, display: 'flex', alignItems: 'baseline', gap: 20 }}>
+            <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 600, fontSize: 12, letterSpacing: '0.5em', textTransform: 'uppercase', color: POS.accent, flexShrink: 0 }}>Хотят</div>
+            <div style={{ fontFamily: POS_FONTS.display, fontStyle: 'italic', fontWeight: 400, fontSize: 22, lineHeight: 1.3, color: POS.ink }}>Запустить стартап.</div>
+          </div>
         </div>
 
       </div>
@@ -393,7 +459,7 @@ function P11_ArtemDelets() {
     },
     {
       name: 'Делец', age: '20–25', role: 'Отшельник · игроман · хаб',
-      img: null, stripColor: POS.ink,
+      img: '../../assets/refs/delets-02.png', stripColor: POS.ink,
       body: <>Похож на делового растамана. <b>Хаб преступного мира</b>: помогает купить, продать, связаться с наёмником. Работает со всеми, преследует исключительно свои меркантильные интересы.</>,
       wants: 'Больше денег.',
     },
@@ -473,8 +539,8 @@ function P12_SynopsisSection() {
           }}>Сино-<br/>псис</h1>
           <div style={{ width: 120, height: 6, background: POS.ink, marginTop: 40 }} />
         </div>
-        <div style={{ position: 'relative', borderLeft: `6px solid ${POS.ink}` }}>
-          <PosImage src="../../assets/ref-scene-solitude.png" filter="red" />
+        <div style={{ position: 'relative', borderLeft: `6px solid ${POS.ink}`, overflow: 'hidden' }}>
+          <img src="../../assets/refs/synopsis-hero.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '65% center', transform: 'scaleX(-1)' }} />
         </div>
       </div>
     </div>
@@ -512,7 +578,7 @@ function P13_Synopsis() {
         </div>
         <div style={{ display: 'grid', gridTemplateRows: '1fr 1fr', gap: 16, height: 620 }}>
           <div style={{ border: `4px solid ${POS.ink}`, overflow: 'hidden' }}>
-            <PosImage src="../../assets/ref-peaky-thomas.png" filter="hot" />
+            <PosImage src="../../assets/refs/tone-ref-top.png" filter="none" style={{ objectPosition: 'center 15%' }} />
           </div>
           <div style={{ border: `4px solid ${POS.ink}`, overflow: 'hidden' }}>
             <PosImage src="../../assets/ref-scene-solitude.png" filter="crush" />
@@ -621,7 +687,7 @@ function P14_Arc() {
               marginBottom: 14,
             }}>{a.t}</div>
             <div style={{ width: 40, height: 3, background: a.dark ? POS.accent : POS.ink, marginBottom: 14 }} />
-            <PosBody size={15} color={a.dark ? 'rgba(243,233,203,0.9)' : POS.ink}>{a.text}</PosBody>
+            <PosBody size={18} color={a.dark ? 'rgba(243,233,203,0.9)' : POS.ink}>{a.text}</PosBody>
           </div>
         ))}
       </div>
@@ -648,7 +714,7 @@ function P14_Arc() {
               letterSpacing: '0.02em', color: POS.ink, marginBottom: 8,
             }}>{t}</div>
             <div style={{
-              fontFamily: POS_FONTS.body, fontSize: 12, lineHeight: 1.35,
+              fontFamily: POS_FONTS.body, fontSize: 16, lineHeight: 1.4,
               color: POS.ink, opacity: 0.8,
             }}>{sub}</div>
           </div>
@@ -670,38 +736,41 @@ function P14_Arc() {
 // ── Движок серии ──────────────────────────────────────────────
 function P_EpisodeEngine() {
   const mechanics = [
-    { label: 'Каждая серия — крючок',
+    { n: '01', label: 'Каждая серия — крючок',
       text: 'Локальный узел закрывается в последние минуты — и сразу открывает новый. Зритель не выходит, он нажимает «следующую».' },
-    { label: 'Масштаб угрозы растёт',
+    { n: '02', label: 'Масштаб угрозы растёт',
       text: 'С1–2: личное выживание. С3–4: криминальная интрига. С5–6: война внутри организации. С7–8: всё рушится одновременно.' },
-    { label: 'Эмоциональный центр не размывается',
+    { n: '03', label: 'Эмоциональный центр не размывается',
       text: 'За 8 серий — один главный вопрос: сможет ли Оливия позволить себе кого-то любить? Зритель всегда знает, за кем идёт.' },
-    { label: 'Ставка удваивается в финале',
+    { n: '04', label: 'Ставка удваивается в финале',
       text: 'Оливия выбирает Машу — и платит за это жизнью. Жанровая история превращается в эмоциональное событие.' },
   ];
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-      {/* Левая — тёмная, как слайд 6 */}
-      <div style={{ background: POS.ink, padding: '90px 70px', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative' }}>
+      {/* Левая — тёмная */}
+      <div style={{ background: POS.ink, padding: '90px 70px', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', borderRight: `6px solid ${POS.accent}` }}>
         <PosMeta index={17} total={PTOTAL} section="Движок сезона" dark />
-        <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 500, fontSize: 14, letterSpacing: '0.5em', textTransform: 'uppercase', color: POS.yellow, marginBottom: 16, marginTop: 60 }}>8 серий · горизонтальный сезон</div>
-        <h1 style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 88, lineHeight: 0.88, textTransform: 'uppercase', color: POS.cream, margin: '0 0 24px 0' }}>Движок<br/>сезона</h1>
-        <div style={{ width: 70, height: 4, background: POS.yellow, marginBottom: 28 }} />
-        <PosBody size={20} color="rgba(243,233,203,0.85)" style={{ lineHeight: 1.65 }}>
+        <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 500, fontSize: 16, letterSpacing: '0.5em', textTransform: 'uppercase', color: POS.accent, marginBottom: 16, marginTop: 60 }}>8 серий · горизонтальный сезон</div>
+        <h1 style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 108, lineHeight: 0.88, textTransform: 'uppercase', color: POS.cream, margin: '0 0 24px 0' }}>Движок<br/>сезона</h1>
+        <div style={{ width: 70, height: 5, background: POS.accent, marginBottom: 32 }} />
+        <PosBody size={24} color="rgba(243,233,203,0.85)" style={{ lineHeight: 1.65 }}>
           Каждая серия закрывает локальный узел и тут же открывает новый уровень угрозы. Напряжение растёт нелинейно — и никогда не отпускает.
         </PosBody>
-        <div style={{ marginTop: 36, padding: '18px 24px', border: '2px solid rgba(255,204,0,0.35)', background: 'rgba(255,204,0,0.06)' }}>
-          <div style={{ fontFamily: POS_FONTS.display, fontStyle: 'italic', fontSize: 20, lineHeight: 1.4, color: POS.cream, opacity: 0.9 }}>
+        <div style={{ marginTop: 36, padding: '20px 26px', border: `2px solid ${POS.accent}`, background: 'rgba(199,54,31,0.08)' }}>
+          <div style={{ fontFamily: POS_FONTS.display, fontStyle: 'italic', fontSize: 24, lineHeight: 1.4, color: POS.cream, opacity: 0.9 }}>
             «Это сериал, который можно продать одним кадром, одним трейлером — и одним сарафанным тезисом.»
           </div>
         </div>
       </div>
-      {/* Правая — жёлтая, как слайд 6 */}
+      {/* Правая — охра */}
       <div style={{ background: POS.bg, padding: '90px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-        {mechanics.map(({ label, text }) => (
-          <div key={label} style={{ marginBottom: 26, paddingBottom: 26, borderBottom: '2px solid ' + POS.yellow }}>
-            <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 13, letterSpacing: '0.4em', textTransform: 'uppercase', color: POS.accent, marginBottom: 8 }}>{label}</div>
-            <div style={{ fontFamily: POS_FONTS.body, fontSize: 20, lineHeight: 1.5, color: POS.ink }}>{text}</div>
+        {mechanics.map(({ n, label, text }) => (
+          <div key={n} style={{ marginBottom: 28, paddingBottom: 28, borderBottom: `2px solid ${POS.accent}`, display: 'grid', gridTemplateColumns: '48px 1fr', gap: 20, alignItems: 'start' }}>
+            <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 36, lineHeight: 1, color: POS.accent }}>{n}</div>
+            <div>
+              <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 18, letterSpacing: '0.04em', textTransform: 'uppercase', color: POS.ink, marginBottom: 10 }}>{label}</div>
+              <div style={{ fontFamily: POS_FONTS.body, fontSize: 22, lineHeight: 1.55, color: POS.ink }}>{text}</div>
+            </div>
           </div>
         ))}
       </div>
@@ -712,12 +781,10 @@ function P_EpisodeEngine() {
 
 function P15_Tone() {
   const rows = [
-    ['Свет',   'Низкий ключ. Сочная темнота. Единственный источник в кадре.'],
-    ['Цвет',   'Десатурированные охра и пыльная бирюза. Ржавчина как акцент.'],
-    ['Камера', 'Длинный фокус, неспешные наезды, «подглядывание» из-за углов.'],
-    ['Монтаж', 'Длинные сцены с напряжением. Резкий врез, где нужно рвануть.'],
-    ['Музыка', 'Электронный пост-панк · гитары с дилеем · советская эстрада наизнанку.'],
-    ['Юмор',   'Сухой, по-гай-ричи. Через диалоги и ситуации, не через гэги.'],
+    ['Свет',   'мотивированный и агрессивный. Неон, фары, экран телефона. Единственный источник в кадре. Тени не мягкие — они скрывают.'],
+    ['Цвет',   'три цвета в конфликте: жёлтый (мир доставки, деньги, ловушка), красный (насилие, акцент, советский знак), холодный синий (ночь, одиночество, финал). Палитра не создаёт уют — она создаёт давление.'],
+    ['Камера', 'длинный фокус, персонаж под наблюдением. Зритель видит больше, чем герой. Неспешный наезд — до момента, когда всё рвётся.'],
+    ['Экшн',   'без супергероики. Удар — это больно. Погоня — это одышка. Каждое столкновение оставляет след. Насилие случается быстро и выглядит некрасиво.'],
   ];
   return (
     <PosFrame>
@@ -744,8 +811,8 @@ function P15_Tone() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
           {[
-            ['../../assets/ref-peaky-thomas.png', 'none'],
-            ['../../assets/ref-scene-solitude.png', 'none'],
+            ['../../assets/refs/tone-ref-top2.png', 'none'],
+            ['../../assets/refs/tone-ref-bottom.png', 'none'],
             ['../../assets/ref-masha-kid.png', 'none'],
             ['../../assets/ref-olivia-art.png', 'none'],
           ].map(([src, f], i) => (
@@ -1096,17 +1163,14 @@ function P19_Closing() {
         backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.1  0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23p)'/></svg>")`,
       }} />
 
-      <PosMeta index={19} total={PTOTAL} section="Контакты" dark />
-
-      {/* top tape — зеркало титульника, но «Спасибо · контакты» */}
+      {/* top tape — тэглайн */}
       <div style={{
-        position: 'absolute', top: 54, left: 0, right: 0, textAlign: 'center',
-        fontFamily: POS_FONTS.slab, fontSize: 17, letterSpacing: '0.6em',
-        textTransform: 'uppercase', fontWeight: 500,
+        position: 'absolute', top: 36, left: 0, right: 0, textAlign: 'center',
+        fontFamily: POS_FONTS.display, fontSize: 28, fontStyle: 'italic',
         color: POS.cream,
       }}>
-        <span style={{ display: 'inline-block', padding: '12px 40px', background: POS.accent, color: POS.cream }}>
-          Спасибо · ждём обратной связи
+        <span style={{ display: 'inline-block', padding: '16px 60px', background: POS.accent, color: POS.cream }}>
+          История, которая оставит след, а не потратит время
         </span>
       </div>
 
@@ -1141,23 +1205,25 @@ function P19_Closing() {
             color: POS.cream, opacity: 0.6, whiteSpace: 'nowrap',
           }}>8 серий · 45–50 мин</div>
           <div style={{
-            fontFamily: POS_FONTS.display, fontStyle: 'italic',
-            fontSize: 27, lineHeight: 1.2, color: POS.cream,
-            textAlign: 'center',
-          }}>История, которая оставит след, а не потратит время</div>
+            fontFamily: POS_FONTS.slab, fontWeight: 500,
+            fontSize: 18, letterSpacing: '0.45em', textTransform: 'uppercase',
+            color: POS.cream, textAlign: 'center', opacity: 0.7,
+          }}>Спасибо · ждём обратной связи</div>
           <div style={{ textAlign: 'right' }}>
             <div style={{
               fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 22,
-              color: POS.cream, letterSpacing: '0.02em', marginBottom: 6,
+              color: POS.cream, letterSpacing: '0.02em', marginBottom: 8,
             }}>Сергей Черкасов</div>
-            <div style={{
-              fontFamily: POS_FONTS.slab, fontSize: 17, color: POS.cream,
-              opacity: 0.85, letterSpacing: '0.02em', marginBottom: 3,
-            }}>cherkaso8@icloud.com</div>
-            <div style={{
-              fontFamily: POS_FONTS.slab, fontSize: 17, color: POS.cream,
+            <a href="mailto:cherkaso8@icloud.com" style={{
+              display: 'block', fontFamily: POS_FONTS.slab, fontSize: 20, color: POS.cream,
+              opacity: 0.85, letterSpacing: '0.02em', marginBottom: 4,
+              textDecoration: 'none',
+            }}>cherkaso8@icloud.com</a>
+            <a href="tel:+79295000354" style={{
+              display: 'block', fontFamily: POS_FONTS.slab, fontSize: 20, color: POS.cream,
               opacity: 0.85, letterSpacing: '0.02em',
-            }}>+7 929 500 03 54</div>
+              textDecoration: 'none',
+            }}>+7 929 500 03 54</a>
           </div>
         </div>
       </div>
@@ -1166,7 +1232,7 @@ function P19_Closing() {
 }
 
 Object.assign(window, {
-  P01_Title, P02_Epigraph, P03_Format, P04_Logline, P05_CoreIdea,
+  P01_Title, P02_Epigraph, P03_Format, P04_Logline, P05_CoreIdea, P_WhySee,
   P06_CharsSection, P07_Olivia, P08_Masha, P09_Oleg, P10_Trio, P11_ArtemDelets,
   P12_SynopsisSection, P13_Synopsis, P_Pilot, P14_Arc, P_EpisodeEngine, P15_Tone, P16_CourierWorld,
   P17_Audience, P_WhyNow, P_WhyWatch, P18_Team, P19_Closing,
