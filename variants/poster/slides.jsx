@@ -1,6 +1,6 @@
 // V3 — Киноплакатный. 18 слайдов.
 
-const PTOTAL = 22;
+const PTOTAL = 21;
 
 // ── 01. Title — full-bleed постер, крупный логотип штампом ──────
 function P01_Title() {
@@ -205,11 +205,10 @@ function P05_CoreIdea() {
         <div>
           <PosHead kicker="Основная идея" size={120}>О чём<br/>это на самом деле</PosHead>
           <PosBody size={24} style={{ marginTop: 40, maxWidth: 700 }}>
-            За хитросплетением сюжета в стиле <b>Гая Ричи</b> кроется драма, затрагивающая вопросы
-            отцов и детей, ответственности, взросления, и влияния общественных стереотипов на наши действия.
+            За хитросплетением сюжета в стиле <b>Гая Ричи</b> — история о людях, которые не умеют быть родителями.
             <br /><br />
-            Ассоциальная криминальная курьер становится лучшим родителем для незнакомой девочки,
-            чем отец для родного сына, которого буквально убивает своим неприятием.
+            Оливия не хотела ни за кого отвечать, но становится для Маши единственным взрослым.
+            Олег хотел «нормального наследника», но своим неприятием сам ведёт сына к гибели.
           </PosBody>
         </div>
         <div>
@@ -305,7 +304,7 @@ function P06_CharsSection() {
     <div style={{
       position: 'absolute', inset: 0, background: POS.ink, overflow: 'hidden',
     }}>
-      <PosMeta index={8} total={PTOTAL} section="Раздел 1" dark />
+      <PosMeta index={9} total={PTOTAL} section="Раздел 1" dark />
       <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={{ position: 'relative' }}>
           <PosImage src="../../assets/ref-gentlemen.webp" filter="none" />
@@ -383,26 +382,26 @@ function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.ac
   );
 }
 
-function P07_Olivia() { return <PCharFull idx={9} name="Оливия" age="38 лет" role="Криминальный курьер"
+function P07_Olivia() { return <PCharFull idx={10} name="Оливия" age="38 лет" role="Криминальный курьер"
   img="../../assets/refs/olivia-02.png"
   body={<>Доставляет товар, послания, договора. Решает вопросы силой в случае необходимости. Одинокая, замкнутая, скрытная.<br/><br/>Страдает от выгорания и износа суставов — что сильно мешает в работе. Речь короткая, общается неохотно. Одевается практично: худи, капюшоны, куртки, джинсы, ботинки.</>}
   wants="Уйти на покой и уехать к морю. Но в Маше начинает видеть себя в начале пути." />; }
 
-function P08_Masha() { return <PCharFull idx={10} name="Маша" age="8 лет" role="Сирота · попрошайка" imgPos="center 55%"
+function P08_Masha() { return <PCharFull idx={11} name="Маша" age="8 лет" role="Сирота · попрошайка" imgPos="center 55%"
   img="../../assets/refs/masha-05.png" stripColor={POS.ink}
   body={<>Слишком маленькая, чтобы постоять за себя — вынуждена терпеть агрессию старших. Стремится казаться взрослее, сильнее.<br/><br/>Хочет быть кому-то нужной. Собирается уехать, но никак не решается. Очарована Оливией — единственной, кто была к ней добра.</>}
   wants="Найти маму — ту, которой у неё никогда не было." />; }
 
-function P09_Oleg() { return <PCharFull idx={11} name="Олег" age="60 лет" role="Глава организации · работодатель Оливии"
+function P09_Oleg() { return <PCharFull idx={12} name="Олег" age="60 лет" role="Глава организации · работодатель Оливии"
   img="../../assets/refs/oleg-01.jpg"
-  body={<>Заурядный внешний вид скрывает жестокого, расчётливого главу организации по отмыву, обналичиванию и транспортировке нелегальных денег.<br/><br/>Не принимает сына — что на самом деле есть попытка защитить, вытеснив из своего мира. Своими руками, отстраняя сына, толкал его к гибели. <b>В финале собственноручно расстреливает его</b>, не узнав сына под маской.</>}
+  body={<>Заурядный внешний вид скрывает жестокого, расчётливого главу организации по отмыву, обналичиванию и транспортировке нелегальных денег.<br/><br/>Его попытка вытолкнуть сына из криминального мира приводит к обратному: Тимур входит в этот мир под чужой маской — и становится жертвой отцовской слепоты.</>}
   wants="Нормального наследника." />; }
 
 // ── 10. Дуэт Сухой + Гуддини ─────────────────────────────────
 function P10_Trio() {
   return (
     <PosFrame>
-      <PosMeta index={12} total={PTOTAL} section="Персонажи" />
+      <PosMeta index={13} total={PTOTAL} section="Персонажи" />
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, marginTop: 20 }}>
 
         {/* Левая колонка — одна картинка на двоих */}
@@ -434,7 +433,7 @@ function P10_Trio() {
           ))}
 
           <div style={{ marginTop: 24, padding: '16px 20px', background: POS.ink, color: POS.cream, fontFamily: POS_FONTS.display, fontStyle: 'italic', fontSize: 19, lineHeight: 1.4 }}>
-            Воруют у Оливии — и сами того не зная, приводят к гибели Тимура.
+            Воруют у Оливии — и запускают цепочку событий, которую уже не смогут остановить.
           </div>
 
           <div style={{ marginTop: 10, padding: '14px 20px', border: `2px solid ${POS.ink}`, background: POS.cream, display: 'flex', alignItems: 'baseline', gap: 20 }}>
@@ -466,7 +465,7 @@ function P11_ArtemDelets() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={13} total={PTOTAL} section="Персонажи" />
+      <PosMeta index={14} total={PTOTAL} section="Персонажи" />
       <PosHead kicker="Катализатор и его проводник" size={104}>Тимур &amp; Делец</PosHead>
 
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, marginTop: 36 }}>
@@ -521,7 +520,7 @@ function P12_SynopsisSection() {
     <div style={{
       position: 'absolute', inset: 0, background: POS.accent, color: POS.cream, overflow: 'hidden',
     }}>
-      <PosMeta index={14} total={PTOTAL} section="Раздел 2" dark />
+      <PosMeta index={15} total={PTOTAL} section="Раздел 2" dark />
       <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={{
           padding: '110px 90px 90px', display: 'flex', flexDirection: 'column', justifyContent: 'center',
@@ -551,7 +550,7 @@ function P12_SynopsisSection() {
 function P13_Synopsis() {
   return (
     <PosFrame>
-      <PosMeta index={15} total={PTOTAL} section="Синопсис" />
+      <PosMeta index={16} total={PTOTAL} section="Синопсис" />
       <PosHead kicker="Краткое содержание" size={100}>Синопсис</PosHead>
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1.25fr 1fr', gap: 60, alignItems: 'start', marginTop: 40 }}>
         <div>
@@ -651,11 +650,11 @@ function P14_Arc() {
     ['05', 'Одиночество Маши', 'Оливия в изоляции. Маша впервые действует самостоятельно вопреки недружелюбному миру.'],
     ['06', 'Ложный покой',     'Оливия узнаёт о нормальной жизни. Маша впервые позволяет себе привязанность.'],
     ['07', 'Предательство',    'Оливия узнаёт, что её хочет убить тот, кого она считала семьёй. От боли она отталкивает Машу.'],
-    ['08', 'Финал',            'Оливия выбирает Машу, но платит за это жизнью. Маша остаётся с её главным наследием: позволить себе жить.'],
+    ['08', 'Финал',            'Оливия впервые выбирает не выживание, а Машу — и платит за это жизнью. Маша остаётся с её главным наследием: позволить себе жить.'],
   ];
   return (
     <PosFrame>
-      <PosMeta index={16} total={PTOTAL} section="Арка" />
+      <PosMeta index={17} total={PTOTAL} section="Арка" />
       <PosHead kicker="Четыре акта · восемь серий" size={100}>Драматургия</PosHead>
 
       {/* 4 акта */}
@@ -749,7 +748,7 @@ function P_EpisodeEngine() {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
       {/* Левая — тёмная */}
       <div style={{ background: POS.ink, padding: '90px 70px', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', borderRight: `6px solid ${POS.accent}` }}>
-        <PosMeta index={17} total={PTOTAL} section="Движок сезона" dark />
+        <PosMeta index={18} total={PTOTAL} section="Движок сезона" dark />
         <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 500, fontSize: 16, letterSpacing: '0.5em', textTransform: 'uppercase', color: POS.accent, marginBottom: 16, marginTop: 60 }}>8 серий · горизонтальный сезон</div>
         <h1 style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 108, lineHeight: 0.88, textTransform: 'uppercase', color: POS.cream, margin: '0 0 24px 0' }}>Движок<br/>сезона</h1>
         <div style={{ width: 70, height: 5, background: POS.accent, marginBottom: 32 }} />
@@ -788,7 +787,7 @@ function P15_Tone() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={18} total={PTOTAL} section="Визуал" />
+      <PosMeta index={19} total={PTOTAL} section="Визуал" />
       <PosHead kicker="Как это выглядит и звучит" size={100}>Тон и визуал</PosHead>
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'start', marginTop: 40 }}>
         <div>
@@ -849,12 +848,10 @@ function P16_CourierWorld() {
             objectFit: 'cover',
             filter: 'contrast(1.05) brightness(0.95) saturate(1.05)',
           }} />
-        {/* мягкий растушёванный край справа — чтобы картинка уходила в чёрный фон слайда */}
         <div style={{
           position: 'absolute', inset: 0,
           background: `linear-gradient(90deg, rgba(28,26,24,0) 0%, rgba(28,26,24,0) 65%, rgba(28,26,24,0.7) 90%, rgba(28,26,24,1) 100%)`,
         }} />
-        {/* лёгкое виньетирование снизу */}
         <div style={{
           position: 'absolute', inset: 0,
           background: `linear-gradient(180deg, rgba(28,26,24,0.3) 0%, rgba(28,26,24,0) 25%, rgba(28,26,24,0) 70%, rgba(28,26,24,0.55) 100%)`,
@@ -950,7 +947,7 @@ function P16_CourierWorld() {
 function P17_Audience() {
   return (
     <PosFrame>
-      <PosMeta index={19} total={PTOTAL} section="Аудитория" />
+      <PosMeta index={20} total={PTOTAL} section="Аудитория" />
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 80, alignItems: 'start', marginTop: 30 }}>
         <div>
           <PosHead kicker="Целевая аудитория" size={100}>Для кого</PosHead>
@@ -977,7 +974,7 @@ function P17_Audience() {
               color: POS.ink, marginBottom: 8, letterSpacing: '-0.01em',
             }}>18–25</div>
             <PosBody size={20}>
-              За счёт персонажей Маши, Сухого и Гуддини — молодая аудитория находит своих героев.
+              18–25 — молодая аудитория, которая считывает одиночество, желание вырваться, деньги, токсичных родителей и попытку стать взрослым раньше времени.
             </PosBody>
           </div>
         </div>
@@ -1028,7 +1025,7 @@ function P_WhyNow() {
     },
     {
       label: 'Пара, которой нет.',
-      text: 'Женщина за сорок и восьмилетняя беспризорница — в российском криминальном сериале такого дуэта не было. Это не экшн с напарниками. Это история о том, можно ли стать родителем, если всю жизнь выживал один.',
+      text: 'Женщина под сорок и восьмилетняя беспризорница — в российском криминальном сериале такого дуэта не было. Это не экшн с напарниками. Это история о том, можно ли стать родителем, если всю жизнь выживал один.',
     },
     {
       label: 'Ставка.',
@@ -1037,7 +1034,7 @@ function P_WhyNow() {
   ];
   return (
     <PosFrame bg={POS.ink} ink={POS.cream}>
-      <PosMeta index={20} total={PTOTAL} section="Почему сейчас" dark />
+      <PosMeta index={8} total={PTOTAL} section="Почему сейчас" dark />
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: 1400, margin: '0 auto', width: '100%' }}>
         <PosHead kicker="Три причины" size={110} color={POS.cream} accentColor={POS.yellow}>Почему сейчас</PosHead>
         <div style={{ marginTop: 40, display: 'flex', flexDirection: 'column', gap: 0 }}>
