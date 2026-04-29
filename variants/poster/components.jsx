@@ -46,8 +46,8 @@ function PosFrame({ children, bg, ink, pad = 90, style }) {
 }
 
 // ── Page meta (top runner) ────────────────────────────────────
-function PosMeta({ index, total, section, dark = false }) {
-  const color = dark ? 'rgba(243,233,203,0.75)' : POS.ink;
+function PosMeta({ index, total, section, dark = false, customColor }) {
+  const color = customColor || (dark ? 'rgba(243,233,203,0.75)' : POS.ink);
   return (
     <div style={{
       position: 'absolute', top: 36, left: 90, right: 90,

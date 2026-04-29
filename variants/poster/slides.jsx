@@ -205,10 +205,11 @@ function P05_CoreIdea() {
         <div>
           <PosHead kicker="Основная идея" size={120}>О чём<br/>это на самом деле</PosHead>
           <PosBody size={28} style={{ marginTop: 40, maxWidth: 700 }}>
-            За хитросплетением сюжета в стиле <b>Гая Ричи</b> — история о людях, которые не умеют быть родителями.
+            За хитросплетением сюжета в стиле <b>Гая Ричи</b> — история о людях, которые ломают друг друга, сами того не желая.
             <br /><br />
-            Оливия не хотела ни за кого отвечать, но становится для Маши единственным взрослым.
-            Олег хотел «нормального наследника», но своим неприятием сам ведёт сына к гибели.
+            Оливия не хотела ни за кого отвечать — но становится для Маши единственным взрослым.
+            <br />
+            Олег хотел «нормального наследника» — но своим равнодушием сам ведёт сына к гибели.
           </PosBody>
         </div>
         <div>
@@ -225,7 +226,8 @@ function P05_CoreIdea() {
               fontFamily: POS_FONTS.display, fontStyle: 'italic', fontWeight: 400,
               fontSize: 32, lineHeight: 1.3, color: POS.cream,
             }}>
-              Человек, которого Оливия считала семьёй, хочет её убить. Девочка, от которой она пыталась избавиться, становится единственной причиной не сдаться.
+              Человек, которого Оливия считала семьёй, хочет её убить.<br/>
+              Девочка, от которой она пыталась избавиться, становится единственной причиной жить.
             </div>
           </div>
           <div style={{ height: 340, marginTop: 20, border: `4px solid ${POS.ink}` }}>
@@ -304,7 +306,7 @@ function P06_CharsSection() {
     <div style={{
       position: 'absolute', inset: 0, background: POS.ink, overflow: 'hidden',
     }}>
-      <PosMeta index={8} total={PTOTAL} section="Раздел 1" dark />
+      <PosMeta index={8} total={PTOTAL} section="" dark />
       <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={{ position: 'relative' }}>
           <PosImage src="../../assets/ref-gentlemen.webp" filter="none" />
@@ -331,14 +333,14 @@ function P06_CharsSection() {
 }
 
 // ── Char full-page template ───────────────────────────────────
-function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.accent, imgPos = 'center top' }) {
+function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.accent, imgPos = 'center top', imgTransformOrigin = 'center top', imgScale = 1.15 }) {
   return (
     <PosFrame>
       <PosMeta index={idx} total={PTOTAL} section="Персонажи" />
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '580px 1fr', gap: 70, alignItems: 'start', marginTop: 40 }}>
         <div>
           <div style={{ height: 720, position: 'relative', border: `4px solid ${POS.ink}`, overflow: 'hidden' }}>
-            {img ? <img src={img} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: imgPos, transform: 'scale(1.15)', transformOrigin: 'center top' }} /> : <PosPlaceholder label={name} />}
+            {img ? <img src={img} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: imgPos, transform: `scale(${imgScale})`, transformOrigin: imgTransformOrigin }} /> : <PosPlaceholder label={name} />}
             <div style={{
               position: 'absolute', bottom: 20, left: 20,
               padding: '10px 18px 8px', background: stripColor, color: POS.cream,
@@ -385,15 +387,15 @@ function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.ac
 function P07_Olivia() { return <PCharFull idx={9} name="Оливия" age="38 лет" role="Криминальный курьер"
   img="../../assets/refs/olivia-02.png"
   body={<>Доставляет товар, послания, договора. Решает вопросы силой в случае необходимости. Одинокая, замкнутая, скрытная.<br/><br/>Страдает от выгорания и износа суставов — что сильно мешает в работе. Речь короткая, общается неохотно. Одевается практично: худи, капюшоны, куртки, джинсы, ботинки.</>}
-  wants="Уйти на покой и уехать к морю. Но в Маше начинает видеть себя в начале пути." />; }
+  wants="Уйти на покой и уехать к морю." />; }
 
 function P08_Masha() { return <PCharFull idx={10} name="Маша" age="8 лет" role="Сирота · попрошайка" imgPos="center 55%"
-  img="../../assets/refs/masha-05.png" stripColor={POS.ink}
-  body={<>Слишком маленькая, чтобы постоять за себя — вынуждена терпеть агрессию старших. Стремится казаться взрослее, сильнее.<br/><br/>Хочет быть кому-то нужной. Собирается уехать, но никак не решается. Очарована Оливией — единственной, кто была к ней добра.</>}
-  wants="Найти маму — ту, которой у неё никогда не было." />; }
+  img="../../assets/refs/masha-06.png" stripColor={POS.ink} imgScale={1.45}
+  body={<>Слишком маленькая, чтобы постоять за себя — вынуждена терпеть агрессию старших. Стремится казаться взрослее, сильнее.<br/><br/>Собирается уехать, но никак не решается. Очарована Оливией — единственной, кто была к ней добра.</>}
+  wants="Быть кому-то нужной. Найти маму, которой у неё никогда не было." />; }
 
 function P09_Oleg() { return <PCharFull idx={11} name="Олег" age="60 лет" role="Глава организации · работодатель Оливии"
-  img="../../assets/refs/oleg-01.jpg" imgPos="60% 20%"
+  img="../../assets/refs/oleg-01.jpg" imgPos="15% 0%" imgTransformOrigin="center top"
   body={<>Заурядный внешний вид скрывает жестокого, расчётливого главу организации по отмыву, обналичиванию и транспортировке нелегальных денег.<br/><br/>Его попытка вытолкнуть сына из криминального мира приводит к обратному: Тимур входит в этот мир под чужой маской — и становится жертвой отцовской слепоты.</>}
   wants="Нормального наследника." />; }
 
@@ -466,7 +468,7 @@ function P11_ArtemDelets() {
   return (
     <PosFrame>
       <PosMeta index={13} total={PTOTAL} section="Персонажи" />
-      <PosHead kicker="Катализатор и его проводник" size={104}>Тимур &amp; Делец</PosHead>
+      <PosHead kicker="Катализатор и хаб" size={104}>Тимур &amp; Делец</PosHead>
 
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, marginTop: 36 }}>
         {pair.map((p) => (
@@ -492,18 +494,18 @@ function P11_ArtemDelets() {
                 color: POS.ink, marginBottom: 14,
               }}>{p.name}</div>
               <div style={{ width: 60, height: 4, background: p.stripColor, marginBottom: 20 }} />
-              <PosBody size={20} style={{ marginBottom: 20, flex: 1 }}>{p.body}</PosBody>
+              <PosBody size={24} style={{ marginBottom: 20, flex: 1 }}>{p.body}</PosBody>
               <div style={{
                 padding: '16px 20px', border: `2px solid ${POS.ink}`, background: POS.bg,
               }}>
                 <div style={{
-                  fontFamily: POS_FONTS.slab, fontWeight: 600, fontSize: 11,
+                  fontFamily: POS_FONTS.slab, fontWeight: 600, fontSize: 13,
                   letterSpacing: '0.5em', textTransform: 'uppercase',
                   color: POS.accent, marginBottom: 6,
                 }}>Хочет</div>
                 <div style={{
                   fontFamily: POS_FONTS.display, fontStyle: 'italic',
-                  fontSize: 22, lineHeight: 1.3, color: POS.ink,
+                  fontSize: 26, lineHeight: 1.3, color: POS.ink,
                 }}>{p.wants}</div>
               </div>
             </div>
@@ -520,7 +522,7 @@ function P12_SynopsisSection() {
     <div style={{
       position: 'absolute', inset: 0, background: POS.accent, color: POS.cream, overflow: 'hidden',
     }}>
-      <PosMeta index={14} total={PTOTAL} section="Раздел 2" dark />
+      <PosMeta index={14} total={PTOTAL} section="" dark />
       <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={{
           padding: '110px 90px 90px', display: 'flex', flexDirection: 'column', justifyContent: 'center',
@@ -557,16 +559,16 @@ function P13_Synopsis() {
           <PosBody size={22} style={{ lineHeight: 1.6 }}>
             <p style={{ margin: '0 0 14px' }}>
               <span style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 26, letterSpacing: '0.05em', color: POS.accent, textTransform: 'uppercase', marginRight: 10 }}>Оливия</span>
-              — одинокая криминальная курьер около 40 лет. Хочет всё бросить и уехать. Её последняя работа оказывается ловушкой — на неё нападают подручные её босса Олега. Но ей удаётся спастись и случайно спасти 8-летнюю сироту Машу, единственную свидетельницу покушения. Вместе они отправляются на поиски нападавших, постепенно всё больше сближаясь.
+              — одинокая криминальная курьерша около 40 лет. Хочет всё бросить и уехать. Её последняя работа оказывается ловушкой — на неё нападают подручные её босса Олега. Но ей удаётся выжить и случайно спасти 8-летнюю сироту Машу, единственную свидетельницу, видевшую лица нападавших. Вместе они отправляются на поиски нападавших, постепенно всё больше сближаясь.
             </p>
             <p style={{ margin: '0 0 14px' }}>
-              Параллельно двое безработных айтишников — Сухой и Гуддини — решают запустить стартап. В поисках стартового капитала они обворовывают квартиру Оливии, вынося вместе с деньгами и компромат на Олега.
+              Параллельно двое безработных айтишников — Сухой и Гуддини — решают запустить стартап. В поисках стартового капитала они обворовывают квартиру Оливии и вместе с деньгами выносят компромат на Олега.
             </p>
             <p style={{ margin: '0 0 14px' }}>
-              Олегу приходится разруливать козни партнёров, решать вопрос с пропавшим общаком и гоняться за выжившей Оливией — совсем не обращая внимания на кризис в отношениях с сыном Тимуром.
+              Олегу приходится разруливать козни партнёров, решать вопрос с пропавшим общаком и гоняться за выжившей Оливией — совсем не замечая кризис в отношениях с сыном Тимуром.
             </p>
             <p style={{ margin: '0 0 14px' }}>
-              Тимур жаждет его одобрения, но так и не получая его, решает доказать себе и отцу свою мужественность — и помогает Сухому и Гуддини.
+              Тимур жаждет одобрения отца, но, так его и не получив, решает доказать, что чего-то стоит, — и помогает Сухому и Гуддини выбираться из смертельной опасности.
             </p>
             <p style={{ margin: 0 }}>
               Чем ближе финал, тем яснее: Оливия становится Маше той матерью, которой у неё не было. А Олег — медленно убивает сына равнодушием.
@@ -746,9 +748,15 @@ function P_EpisodeEngine() {
   ];
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+      <div style={{ position: 'absolute', top: 36, left: 90, right: 90, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: POS_FONTS.slab, fontSize: 15, letterSpacing: '0.35em', textTransform: 'uppercase', fontWeight: 500, zIndex: 10 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, color: 'rgba(243,233,203,0.75)' }}>
+          <div style={{ width: 10, height: 10, background: POS.accent }} />
+          Интерференция
+        </div>
+        <div style={{ color: POS.ink, fontVariantNumeric: 'tabular-nums' }}>№ {String(17).padStart(2,'0')} / {String(PTOTAL).padStart(2,'0')}</div>
+      </div>
       {/* Левая — тёмная */}
       <div style={{ background: POS.ink, padding: '90px 70px', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', borderRight: `6px solid ${POS.accent}` }}>
-        <PosMeta index={17} total={PTOTAL} section="Движок сезона" dark />
         <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 500, fontSize: 16, letterSpacing: '0.5em', textTransform: 'uppercase', color: POS.accent, marginBottom: 16, marginTop: 60 }}>8 серий · горизонтальный сезон</div>
         <h1 style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 108, lineHeight: 0.88, textTransform: 'uppercase', color: POS.cream, margin: '0 0 24px 0' }}>Движок<br/>сезона</h1>
         <div style={{ width: 70, height: 5, background: POS.accent, marginBottom: 32 }} />
@@ -788,7 +796,7 @@ function P15_Tone() {
   return (
     <PosFrame>
       <PosMeta index={18} total={PTOTAL} section="Визуал" />
-      <PosHead kicker="Как это выглядит и звучит" size={100}>Тон и визуал</PosHead>
+      <PosHead kicker="Как это выглядит" size={100}>Тон и визуал</PosHead>
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'stretch', marginTop: 40 }}>
         <div>
           {rows.map(([k, v]) => (
@@ -958,8 +966,7 @@ function P17_Audience() {
             margin: '20px 0 12px', letterSpacing: '-0.02em',
           }}>25–45</div>
           <PosBody size={22} style={{ maxWidth: 540, marginBottom: 22 }}>
-            Зрители, выросшие на «Бригаде», «Бумере» и «Острых козырьках». Ценят плотный сюжет,
-            персонажей с биографией, мрачный юмор. Готовы к неоднозначным героям и финалам без «хеппи-энда».
+            Зрители криминальных драм с антигероями, плотным сюжетом и чёрным юмором. Те, кто вырос на «Бригаде» и «Бумере», но сегодня смотрит «Фарго», «Барри» и «Острые козырьки». Готовы к неоднозначным героям, моральным компромиссам и финалам без хэппи-энда.
           </PosBody>
           <div style={{
             padding: '18px 22px', border: `3px solid ${POS.ink}`,
@@ -975,11 +982,11 @@ function P17_Audience() {
               color: POS.ink, marginBottom: 8, letterSpacing: '-0.01em',
             }}>18–25</div>
             <PosBody size={20}>
-              За счёт Сухого, Гуддини, Тимура и Маши — молодая аудитория, которая считывает одиночество, желание вырваться, деньги, токсичных родителей и попытку стать взрослым раньше времени.
+              За счёт Сухого, Гуддини и Тимура — молодая аудитория, которая считывает одиночество, желание вырваться, деньги, токсичных родителей и попытку стать взрослым раньше времени.
             </PosBody>
           </div>
         </div>
-        <div>
+        <div style={{ paddingTop: '7%' }}>
           <div style={{
             fontFamily: POS_FONTS.slab, fontWeight: 500,
             fontSize: 14, letterSpacing: '0.5em', textTransform: 'uppercase',
