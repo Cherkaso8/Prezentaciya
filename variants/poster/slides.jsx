@@ -1,6 +1,6 @@
 // V3 — Киноплакатный. 18 слайдов.
 
-const PTOTAL = 21;
+const PTOTAL = 20;
 
 // ── 01. Title — full-bleed постер, крупный логотип штампом ──────
 function P01_Title() {
@@ -72,10 +72,10 @@ function P01_Title() {
           <div style={{ flex: 1 }} />
           <div style={{
             fontFamily: POS_FONTS.display, fontStyle: 'italic',
-            fontSize: 33, lineHeight: 1.3, color: POS.cream, opacity: 0.88,
-            maxWidth: 1000, textAlign: 'right',
+            fontSize: 36, lineHeight: 1.3, color: POS.cream, opacity: 0.88,
+            maxWidth: 1100, textAlign: 'right',
           }}>
-            «Люди, как волны, способны либо усиливать друг друга,<br/>либо разрушать, оставляя лишь пену на песке…»
+            «Люди, как волны, способны либо усиливать друг друга, либо разрушать, оставляя лишь пену на песке…»
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@ function P01_Title() {
 function P02_Epigraph() {
   return (
     <PosFrame bg={POS.ink} ink={POS.cream}>
-      <PosMeta index={2} total={PTOTAL} section="Эпиграф" dark />
+      <PosMeta index={1} total={PTOTAL} section="Эпиграф" dark />
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: 1500, margin: '0 auto' }}>
         <div style={{ marginBottom: 30 }}>
           <PosStamp rot={-2} color={POS.accent} bg={POS.cream}>Интерференция /физ./</PosStamp>
@@ -102,7 +102,7 @@ function P02_Epigraph() {
         </div>
         <div style={{ display: 'flex', gap: 20, marginTop: 50, alignItems: 'center' }}>
           <div style={{ width: 80, height: 4, background: POS.accent }} />
-          <PosBody size={24} color="rgba(243,233,203,0.85)">
+          <PosBody size={28} color="rgba(243,233,203,0.85)">
             Одна волна может как усилить другую, «подталкивая» её, так и полностью её уничтожить.
             Точно так же как и мы — в отношениях друг с другом и с нашими детьми.
           </PosBody>
@@ -124,7 +124,7 @@ function P03_Format() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={3} total={PTOTAL} section="Формат" />
+      <PosMeta index={2} total={PTOTAL} section="Формат" />
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'stretch', marginTop: 30 }}>
         <div>
           <PosHead kicker="Спецификации" size={120}>Формат</PosHead>
@@ -138,7 +138,7 @@ function P03_Format() {
               }}>
                 <div style={{
                   fontFamily: POS_FONTS.slab, fontWeight: 700,
-                  fontSize: 15, letterSpacing: '0.35em', textTransform: 'uppercase',
+                  fontSize: 20, letterSpacing: '0.35em', textTransform: 'uppercase',
                   color: POS.accent,
                 }}>{k}</div>
                 <div style={{
@@ -169,7 +169,7 @@ function P03_Format() {
 function P04_Logline() {
   return (
     <PosFrame bg={POS.accent} ink={POS.cream}>
-      <PosMeta index={4} total={PTOTAL} section="Логлайн" dark />
+      <PosMeta index={3} total={PTOTAL} section="Логлайн" dark />
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: 1500, margin: '0 auto' }}>
         <div style={{ marginBottom: 30 }}>
           <PosStamp rot={-2} color={POS.accent} bg={POS.cream}>Логлайн</PosStamp>
@@ -181,7 +181,7 @@ function P04_Logline() {
           color: POS.cream,
           textWrap: 'pretty',
         }}>
-          Желающая уйти на покой <span style={{ color: POS.ink }}>криминальный курьер</span> становится жертвой покушения и случайно спасает <span style={{ color: POS.ink }}>восьмилетнюю сироту</span>, ставшую свидетелем этого.
+          Желающая уйти на покой <span style={{ color: POS.ink }}>криминальная курьерша</span> становится жертвой покушения и случайно спасает <span style={{ color: POS.ink }}>восьмилетнюю сироту</span>, ставшую свидетелем этого.
         </div>
         <div style={{
           marginTop: 40, paddingTop: 28, borderTop: `3px solid rgba(243,233,203,0.35)`,
@@ -200,11 +200,11 @@ function P04_Logline() {
 function P05_CoreIdea() {
   return (
     <PosFrame>
-      <PosMeta index={5} total={PTOTAL} section="Идея" />
+      <PosMeta index={4} total={PTOTAL} section="Идея" />
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 80, alignItems: 'start', marginTop: 30 }}>
         <div>
           <PosHead kicker="Основная идея" size={120}>О чём<br/>это на самом деле</PosHead>
-          <PosBody size={24} style={{ marginTop: 40, maxWidth: 700 }}>
+          <PosBody size={28} style={{ marginTop: 40, maxWidth: 700 }}>
             За хитросплетением сюжета в стиле <b>Гая Ричи</b> — история о людях, которые не умеют быть родителями.
             <br /><br />
             Оливия не хотела ни за кого отвечать, но становится для Маши единственным взрослым.
@@ -304,7 +304,7 @@ function P06_CharsSection() {
     <div style={{
       position: 'absolute', inset: 0, background: POS.ink, overflow: 'hidden',
     }}>
-      <PosMeta index={9} total={PTOTAL} section="Раздел 1" dark />
+      <PosMeta index={8} total={PTOTAL} section="Раздел 1" dark />
       <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={{ position: 'relative' }}>
           <PosImage src="../../assets/ref-gentlemen.webp" filter="none" />
@@ -360,7 +360,7 @@ function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.ac
             color: POS.ink, margin: '0 0 30px 0',
           }}>{name}</h2>
           <div style={{ width: 100, height: 5, background: stripColor, marginBottom: 30 }} />
-          <PosBody size={22} style={{ marginBottom: 34, maxWidth: 720 }}>{body}</PosBody>
+          <PosBody size={26} style={{ marginBottom: 34, maxWidth: 720 }}>{body}</PosBody>
           {wants && (
             <div style={{
               padding: 28, border: `3px solid ${POS.ink}`, background: POS.cream,
@@ -372,7 +372,7 @@ function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.ac
               }}>Хочет</div>
               <div style={{
                 fontFamily: POS_FONTS.display, fontStyle: 'italic', fontWeight: 400,
-                fontSize: 28, lineHeight: 1.35, color: POS.ink,
+                fontSize: 32, lineHeight: 1.35, color: POS.ink,
               }}>{wants}</div>
             </div>
           )}
@@ -382,18 +382,18 @@ function PCharFull({ idx, name, age, role, body, wants, img, stripColor = POS.ac
   );
 }
 
-function P07_Olivia() { return <PCharFull idx={10} name="Оливия" age="38 лет" role="Криминальный курьер"
+function P07_Olivia() { return <PCharFull idx={9} name="Оливия" age="38 лет" role="Криминальный курьер"
   img="../../assets/refs/olivia-02.png"
   body={<>Доставляет товар, послания, договора. Решает вопросы силой в случае необходимости. Одинокая, замкнутая, скрытная.<br/><br/>Страдает от выгорания и износа суставов — что сильно мешает в работе. Речь короткая, общается неохотно. Одевается практично: худи, капюшоны, куртки, джинсы, ботинки.</>}
   wants="Уйти на покой и уехать к морю. Но в Маше начинает видеть себя в начале пути." />; }
 
-function P08_Masha() { return <PCharFull idx={11} name="Маша" age="8 лет" role="Сирота · попрошайка" imgPos="center 55%"
+function P08_Masha() { return <PCharFull idx={10} name="Маша" age="8 лет" role="Сирота · попрошайка" imgPos="center 55%"
   img="../../assets/refs/masha-05.png" stripColor={POS.ink}
   body={<>Слишком маленькая, чтобы постоять за себя — вынуждена терпеть агрессию старших. Стремится казаться взрослее, сильнее.<br/><br/>Хочет быть кому-то нужной. Собирается уехать, но никак не решается. Очарована Оливией — единственной, кто была к ней добра.</>}
   wants="Найти маму — ту, которой у неё никогда не было." />; }
 
-function P09_Oleg() { return <PCharFull idx={12} name="Олег" age="60 лет" role="Глава организации · работодатель Оливии"
-  img="../../assets/refs/oleg-01.jpg"
+function P09_Oleg() { return <PCharFull idx={11} name="Олег" age="60 лет" role="Глава организации · работодатель Оливии"
+  img="../../assets/refs/oleg-01.jpg" imgPos="60% 20%"
   body={<>Заурядный внешний вид скрывает жестокого, расчётливого главу организации по отмыву, обналичиванию и транспортировке нелегальных денег.<br/><br/>Его попытка вытолкнуть сына из криминального мира приводит к обратному: Тимур входит в этот мир под чужой маской — и становится жертвой отцовской слепоты.</>}
   wants="Нормального наследника." />; }
 
@@ -401,7 +401,7 @@ function P09_Oleg() { return <PCharFull idx={12} name="Олег" age="60 лет"
 function P10_Trio() {
   return (
     <PosFrame>
-      <PosMeta index={13} total={PTOTAL} section="Персонажи" />
+      <PosMeta index={12} total={PTOTAL} section="Персонажи" />
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, marginTop: 20 }}>
 
         {/* Левая колонка — одна картинка на двоих */}
@@ -428,17 +428,17 @@ function P10_Trio() {
             <div key={p.name} style={{ borderTop: `2px solid ${POS.ink}`, paddingTop: 18, marginTop: 18 }}>
               <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 500, fontSize: 12, letterSpacing: '0.4em', textTransform: 'uppercase', color: POS.accent, marginBottom: 4 }}>{p.role}</div>
               <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 52, lineHeight: 0.9, textTransform: 'uppercase', color: POS.ink, marginBottom: 10 }}>{p.name}</div>
-              <PosBody size={18}>{p.text}</PosBody>
+              <PosBody size={22}>{p.text}</PosBody>
             </div>
           ))}
 
-          <div style={{ marginTop: 24, padding: '16px 20px', background: POS.ink, color: POS.cream, fontFamily: POS_FONTS.display, fontStyle: 'italic', fontSize: 19, lineHeight: 1.4 }}>
+          <div style={{ marginTop: 24, padding: '16px 20px', background: POS.ink, color: POS.cream, fontFamily: POS_FONTS.display, fontStyle: 'italic', fontSize: 24, lineHeight: 1.4 }}>
             Воруют у Оливии — и запускают цепочку событий, которую уже не смогут остановить.
           </div>
 
           <div style={{ marginTop: 10, padding: '14px 20px', border: `2px solid ${POS.ink}`, background: POS.cream, display: 'flex', alignItems: 'baseline', gap: 20 }}>
-            <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 600, fontSize: 12, letterSpacing: '0.5em', textTransform: 'uppercase', color: POS.accent, flexShrink: 0 }}>Хотят</div>
-            <div style={{ fontFamily: POS_FONTS.display, fontStyle: 'italic', fontWeight: 400, fontSize: 22, lineHeight: 1.3, color: POS.ink }}>Запустить стартап.</div>
+            <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 600, fontSize: 14, letterSpacing: '0.5em', textTransform: 'uppercase', color: POS.accent, flexShrink: 0 }}>Хотят</div>
+            <div style={{ fontFamily: POS_FONTS.display, fontStyle: 'italic', fontWeight: 400, fontSize: 26, lineHeight: 1.3, color: POS.ink }}>Запустить стартап.</div>
           </div>
         </div>
 
@@ -465,7 +465,7 @@ function P11_ArtemDelets() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={14} total={PTOTAL} section="Персонажи" />
+      <PosMeta index={13} total={PTOTAL} section="Персонажи" />
       <PosHead kicker="Катализатор и его проводник" size={104}>Тимур &amp; Делец</PosHead>
 
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, marginTop: 36 }}>
@@ -520,7 +520,7 @@ function P12_SynopsisSection() {
     <div style={{
       position: 'absolute', inset: 0, background: POS.accent, color: POS.cream, overflow: 'hidden',
     }}>
-      <PosMeta index={15} total={PTOTAL} section="Раздел 2" dark />
+      <PosMeta index={14} total={PTOTAL} section="Раздел 2" dark />
       <div style={{ position: 'absolute', inset: 0, display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={{
           padding: '110px 90px 90px', display: 'flex', flexDirection: 'column', justifyContent: 'center',
@@ -550,11 +550,11 @@ function P12_SynopsisSection() {
 function P13_Synopsis() {
   return (
     <PosFrame>
-      <PosMeta index={16} total={PTOTAL} section="Синопсис" />
+      <PosMeta index={15} total={PTOTAL} section="Синопсис" />
       <PosHead kicker="Краткое содержание" size={100}>Синопсис</PosHead>
-      <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1.25fr 1fr', gap: 60, alignItems: 'start', marginTop: 40 }}>
+      <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1.25fr 1fr', gap: 60, alignItems: 'start', marginTop: 16 }}>
         <div>
-          <PosBody size={22} style={{ lineHeight: 1.65 }}>
+          <PosBody size={22} style={{ lineHeight: 1.6 }}>
             <p style={{ margin: '0 0 14px' }}>
               <span style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 26, letterSpacing: '0.05em', color: POS.accent, textTransform: 'uppercase', marginRight: 10 }}>Оливия</span>
               — одинокая криминальная курьер около 40 лет. Хочет всё бросить и уехать. Её последняя работа оказывается ловушкой — на неё нападают подручные её босса Олега. Но ей удаётся спастись и случайно спасти 8-летнюю сироту Машу, единственную свидетельницу покушения. Вместе они отправляются на поиски нападавших, постепенно всё больше сближаясь.
@@ -654,7 +654,7 @@ function P14_Arc() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={17} total={PTOTAL} section="Арка" />
+      <PosMeta index={16} total={PTOTAL} section="Арка" />
       <PosHead kicker="Четыре акта · восемь серий" size={100}>Драматургия</PosHead>
 
       {/* 4 акта */}
@@ -748,7 +748,7 @@ function P_EpisodeEngine() {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
       {/* Левая — тёмная */}
       <div style={{ background: POS.ink, padding: '90px 70px', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', borderRight: `6px solid ${POS.accent}` }}>
-        <PosMeta index={18} total={PTOTAL} section="Движок сезона" dark />
+        <PosMeta index={17} total={PTOTAL} section="Движок сезона" dark />
         <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 500, fontSize: 16, letterSpacing: '0.5em', textTransform: 'uppercase', color: POS.accent, marginBottom: 16, marginTop: 60 }}>8 серий · горизонтальный сезон</div>
         <h1 style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 108, lineHeight: 0.88, textTransform: 'uppercase', color: POS.cream, margin: '0 0 24px 0' }}>Движок<br/>сезона</h1>
         <div style={{ width: 70, height: 5, background: POS.accent, marginBottom: 32 }} />
@@ -787,9 +787,9 @@ function P15_Tone() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={19} total={PTOTAL} section="Визуал" />
+      <PosMeta index={18} total={PTOTAL} section="Визуал" />
       <PosHead kicker="Как это выглядит и звучит" size={100}>Тон и визуал</PosHead>
-      <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'start', marginTop: 40 }}>
+      <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'stretch', marginTop: 40 }}>
         <div>
           {rows.map(([k, v]) => (
             <div key={k} style={{
@@ -803,7 +803,7 @@ function P15_Tone() {
                 textTransform: 'uppercase', letterSpacing: '0.02em',
                 color: POS.accent,
               }}>{k}</div>
-              <PosBody size={19}>{v}</PosBody>
+              <PosBody size={22}>{v}</PosBody>
             </div>
           ))}
           <div style={{ borderTop: `2px solid ${POS.ink}` }} />
@@ -865,7 +865,7 @@ function P16_CourierWorld() {
         backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.8  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23p)'/></svg>")`,
       }} />
 
-      <PosMeta index={7} total={PTOTAL} section="Мир" dark />
+      <PosMeta index={6} total={PTOTAL} section="" dark />
 
       {/* плашка-подпись на картинке, нижний левый угол */}
       <div style={{
@@ -877,24 +877,25 @@ function P16_CourierWorld() {
 
       {/* правая колонка — контент поверх */}
       <div style={{
-        position: 'absolute', top: 140, right: 90, bottom: 70, width: 860,
+        position: 'absolute', top: 50, right: 90, bottom: 70, width: 860,
         zIndex: 5, display: 'flex', flexDirection: 'column',
       }}>
         <div style={{
           fontFamily: POS_FONTS.slab, fontWeight: 500,
           fontSize: 16, letterSpacing: '0.5em', textTransform: 'uppercase',
-          color: POS.yellow, marginBottom: 14,
+          color: POS.yellow, marginBottom: 20,
         }}>Вселенная сериала</div>
 
         <h1 style={{
           fontFamily: POS_FONTS.slab, fontWeight: 700,
           fontSize: 108, lineHeight: 0.88, letterSpacing: '-0.015em',
-          textTransform: 'uppercase', color: POS.cream, margin: '0 0 22px 0',
+          textTransform: 'uppercase', color: POS.cream, margin: '0 0 18px 0',
         }}>Мир криминальных<br/>курьеров</h1>
+
 
         <div style={{ width: 120, height: 5, background: POS.yellow, marginBottom: 22 }} />
 
-        <PosBody size={22} color="rgba(243,233,203,0.9)" style={{ marginBottom: 22 }}>
+        <PosBody size={26} color="rgba(243,233,203,0.9)" style={{ marginBottom: 22 }}>
           Одна организация. Сотни пунктов доставки по стране. Нейтральная служба,
           через которую идут товары, послания и деньги — между кем угодно, мимо кого угодно.
         </PosBody>
@@ -905,7 +906,7 @@ function P16_CourierWorld() {
         }}>
           <div style={{
             fontFamily: POS_FONTS.display, fontStyle: 'italic',
-            fontSize: 22, lineHeight: 1.35, color: POS.cream,
+            fontSize: 26, lineHeight: 1.35, color: POS.cream,
           }}>
             «Джон Уик в мире доставки. Только доставляют не смерть — доставляют <b style={{ color: POS.yellow, fontStyle: 'normal' }}>всё</b>, что не доставит Яндекс.»
           </div>
@@ -927,12 +928,12 @@ function P16_CourierWorld() {
                 letterSpacing: '0.04em', color: POS.accent, marginBottom: 4,
               }}>{String(i + 1).padStart(2, '0')}</div>
               <div style={{
-                fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 22,
+                fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 26,
                 textTransform: 'uppercase', letterSpacing: '0.01em',
                 color: POS.ink, marginBottom: 6,
               }}>{k}</div>
               <div style={{
-                fontFamily: POS_FONTS.body, fontSize: 16,
+                fontFamily: POS_FONTS.body, fontSize: 19,
                 lineHeight: 1.4, color: POS.ink,
               }}>{v}</div>
             </div>
@@ -947,7 +948,7 @@ function P16_CourierWorld() {
 function P17_Audience() {
   return (
     <PosFrame>
-      <PosMeta index={20} total={PTOTAL} section="Аудитория" />
+      <PosMeta index={19} total={PTOTAL} section="Аудитория" />
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 80, alignItems: 'start', marginTop: 30 }}>
         <div>
           <PosHead kicker="Целевая аудитория" size={100}>Для кого</PosHead>
@@ -965,16 +966,16 @@ function P17_Audience() {
             background: POS.cream, maxWidth: 540,
           }}>
             <div style={{
-              fontFamily: POS_FONTS.slab, fontWeight: 600, fontSize: 12,
+              fontFamily: POS_FONTS.slab, fontWeight: 600, fontSize: 16,
               letterSpacing: '0.4em', textTransform: 'uppercase',
               color: POS.accent, marginBottom: 8,
             }}>+ потенциал охвата</div>
             <div style={{
-              fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 40, lineHeight: 1,
+              fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 56, lineHeight: 1,
               color: POS.ink, marginBottom: 8, letterSpacing: '-0.01em',
             }}>18–25</div>
             <PosBody size={20}>
-              18–25 — молодая аудитория, которая считывает одиночество, желание вырваться, деньги, токсичных родителей и попытку стать взрослым раньше времени.
+              За счёт Сухого, Гуддини, Тимура и Маши — молодая аудитория, которая считывает одиночество, желание вырваться, деньги, токсичных родителей и попытку стать взрослым раньше времени.
             </PosBody>
           </div>
         </div>
@@ -1034,13 +1035,13 @@ function P_WhyNow() {
   ];
   return (
     <PosFrame bg={POS.ink} ink={POS.cream}>
-      <PosMeta index={8} total={PTOTAL} section="Почему сейчас" dark />
+      <PosMeta index={7} total={PTOTAL} section="Почему сейчас" dark />
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: 1400, margin: '0 auto', width: '100%' }}>
         <PosHead kicker="Три причины" size={110} color={POS.cream} accentColor={POS.yellow}>Почему сейчас</PosHead>
         <div style={{ marginTop: 40, display: 'flex', flexDirection: 'column', gap: 0 }}>
           {blocks.map(({ label, text }, i) => (
             <div key={i} style={{ borderTop: '2px solid rgba(243,233,203,0.15)', paddingTop: 30, paddingBottom: 30 }}>
-              <PosBody size={28} color={POS.cream} style={{ lineHeight: 1.65 }}>
+              <PosBody size={32} color={POS.cream} style={{ lineHeight: 1.65 }}>
                 <span style={{ fontFamily: POS_FONTS.display, fontStyle: 'italic', fontWeight: 400, color: POS.yellow }}>{label}</span>
                 {' '}{text}
               </PosBody>
@@ -1063,15 +1064,15 @@ function P_WhyWatch() {
   ];
   return (
     <PosFrame>
-      <PosMeta index={6} total={PTOTAL} section="Почему смотреть" />
+      <PosMeta index={5} total={PTOTAL} section="Почему смотреть" />
       <PosHead kicker="Для зрителя" size={90}>Почему смотреть</PosHead>
       <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginTop: 28 }}>
         {reasons.map(({ n, head, body }) => (
           <div key={n} style={{ border: `4px solid ${POS.ink}`, padding: '22px 26px', background: POS.cream, display: 'flex', flexDirection: 'column', gap: 10 }}>
             <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 32, color: POS.accent, lineHeight: 1 }}>{n}</div>
-            <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 22, textTransform: 'uppercase', color: POS.ink, lineHeight: 1.1 }}>{head}</div>
+            <div style={{ fontFamily: POS_FONTS.slab, fontWeight: 700, fontSize: 26, textTransform: 'uppercase', color: POS.ink, lineHeight: 1.1 }}>{head}</div>
             <div style={{ width: 36, height: 3, background: POS.accent }} />
-            <PosBody size={20}>{body}</PosBody>
+            <PosBody size={23}>{body}</PosBody>
           </div>
         ))}
       </div>
